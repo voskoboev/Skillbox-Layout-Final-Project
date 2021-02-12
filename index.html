@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Page</title>
+  <!-- favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+  <link rel="manifest" href="images/favicon/site.webmanifest">
+  <link rel="mask-icon" href="images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <!-- /favicon -->
+
+  <link rel="stylesheet" href="libs/reset/reset.css">
+  <!-- <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet"> -->
+  <link rel="stylesheet" href="libs/swiper/swiper-bundle.min.css">
+  <link rel="stylesheet" href="css/index.css">
+  <script src="https://kit.fontawesome.com/5e506a63ff.js" crossorigin="anonymous" defer></script>
+  <script src="libs/swiper/swiper-bundle.min.js" defer></script>
+  <script src="js/index.js" defer></script>
+
+</head>
+
+<body class="body">
+
+  <div class="modal-window">
+    <form class="modal-window__form" action="#" method="post" name="modal-window-form">
+      <button class="modal-window__close-btn">
+        <i class="modal-window__close-btn-cross fas fa-times"></i>
+      </button>
+      <label class="modal-window__name-label">
+        Ваше имя
+        <input class="modal-window__input-name modal-window__input" type="text" name="name" minlength="2" required>
+      </label>
+      <label class="modal-window__tel-label">
+        Телефон
+        <input class="modal-window__input-tel modal-window__input" type="tel" name="tel" required>
+      </label>
+      <input class="button button-primary modal-window__submit-btn" type="submit" name="submit" value="Отправить">
+    </form>
+    <div class="modal-window__form-success">
+      <p class="modal-window__form-success-text">
+        Ваше сообщение отправлено!
+      </p>
+    </div>
+
+  </div>
+
+  <div class="scroll-up-btn">
+    <div class="scroll-up-btn-first-line"></div>
+    <div class="scroll-up-btn-second-line"></div>
+  </div>
+
+  <header class="header">
+
+    <div class="container header__container">
+
+      <div class="header__upper">
+
+        <div class="header__decor-item header__decor-item--curly-braces">
+          { }
+        </div>
+        <div class="header__decor-item header__decor-item--small-div">
+          &lt;div&gt;
+        </div>
+        <div class="header__decor-item header__decor-item--num">
+          <!-- <div class="one"> -->
+            #
+          <!-- </div> -->
+        </div>
+        <div class="header__decor-item header__decor-item--big-div">
+          &lt;div&gt;
+        </div>
+        <div class="header__decor-item header__decor-item--tag-braces">
+          &lt;/&gt;
+        </div>
+        <div class="header__decor-item header__decor-item--tag-braces-mobile">
+          &lt;/&gt;
+        </div>
+
+        <button class="header__burger-menu-btn">
+          <span class="header__burger-menu-btn-line"></span>
+        </button>
+
+        <nav class="header__nav">
+          <ul class="header__menu">
+            <li class="menu-item header__menu-item menu-item--services">
+              Услуги
+            </li>
+            <li class="menu-item header__menu-item menu-item--portfolio">
+              Портфолио
+            </li>
+            <li class="menu-item header__menu-item menu-item--prices">
+              Стоимость
+            </li>
+          </ul>
+        </nav>
+        <div class="header__upper-right-side">
+          <a class="header__tel-link" href="tel:+74999955577">
+            +7 (499) 995-55-77
+          </a>
+          <button class="button button-secondary header__submit-btn">
+            Заказать звонок
+          </button>
+        </div>
+        <div class="button header__mobile-call-btn">
+        </div>
+      </div>
+      <div class="header__lower">
+
+        <div class="header__lower-left-side">
+          <h1 class="header__title">
+            Дмитрий Алексеев
+          </h1>
+          <p class="header__text">
+            Frontend-разработчик и&nbsp;веб-верстальщик
+          </p>
+          <button class="button button-primary  header__more-info-btn">
+            Узнать больше
+          </button>
+        </div>
+
+        <div class="header__lower-right-side">
+          <picture class="header__background-img">
+            <source srcset="./images/ellipse_320.svg" media="(max-width: 320px)">
+            <source srcset="./images/ellipse_1024.svg" media="(max-width: 1024px)">
+            <img src="./images/ellipse_desktop.svg" alt="ellipse">
+          </picture>
+          <img class="header__person-img" src="./images/person-compressed.png" alt="person">
+        </div>
+
+      </div>
+    </div>
+  </header>
+  <section class="services">
+    <div class="container services__container">
+      <h2 class="services__title">
+        Что я делаю
+      </h2>
+      <div class="services__features-flex-container">
+        <div class="services__feature">
+          <img src="images/monitor-compressed.png" alt="monitor" class="services__img services__img--monitor">
+          <h3 class="services__feature-title">
+            Вёрстка лендинг&mdash;страниц и&nbsp;сайтов любой сложности
+          </h3>
+        </div>
+        <div class="services__feature">
+          <img src="images/screens-compressed.png" alt="screens" class="services__img services__img--screens">
+          <h3 class="services__feature-title">
+            Адаптивная вёрстка под&nbsp;все браузеры и&nbsp;устройства
+          </h3>
+        </div>
+        <div class="services__feature">
+          <img src="images/programming-compressed.png" alt="programming"
+            class="services__img services__img--programming">
+          <h3 class="services__feature-title">
+            Frontend&mdash;разработка и&nbsp;программирование
+          </h3>
+        </div>
+        <div class="services__feature">
+          <img src="images/development-compressed.png" alt="development"
+            class="services__img services__img--development">
+          <h3 class="services__feature-title">
+            Исправление и&nbsp;доработка существующей вёрстки
+          </h3>
+        </div>
+      </div>
+      <button class="button button-primary  services__price-info-btn">
+        Узнать стоимость
+      </button>
+    </div>
+  </section>
+
+  <section class="portfolio">
+    <div class="container portfolio__container">
+
+      <h2 class="portfolio__title">
+        Примеры моих работ
+      </h2>
+
+      <div class="slider-buttons">
+        <div class="swiper-button swiper-button-prev">
+          <img class="swiper-button-prev-img" src="images/arrow-compressed.png" alt="arrow">
+        </div>
+        <div class="swiper-button swiper-button-next">
+          <img class="swiper-button-next-img" src="images/arrow-compressed.png" alt="arrow">
+        </div>
+      </div>
+     
+
+      <div class="swiper-container">
+
+        <div class="swiper-wrapper">
+
+          <div class="swiper-slide">
+            <img class="swiper-img" src="images/psychologist-compressed.jpg" alt="psychologist">
+            <p class="swiper-text">
+              Сайт психолога Веры Антоновой
+            </p>
+          </div>
+          <div class="swiper-slide">
+            <img class="swiper-img" src="images/kid-shop-compressed.jpg" alt="kid-shop">
+            <p class="swiper-text">
+              Сайт магазина детской одежды
+            </p>
+          </div>
+          <div class="swiper-slide">
+            <img class="swiper-img" src="images/fishing-shop-compressed.jpg" alt="fishing-shop">
+            <p class="swiper-text">
+              Сайт магазина «Рыболов»
+            </p>
+          </div>
+          <div class="swiper-slide">
+            <img class="swiper-img" src="images/psychologist-compressed.jpg" alt="psychologist">
+            <p class="swiper-text">
+              Сайт психолога Веры Антоновой
+            </p>
+          </div>
+          <div class="swiper-slide">
+            <img class="swiper-img" src="images/kid-shop-compressed.jpg" alt="kid-shop">
+            <p class="swiper-text">
+              Сайт магазина детской одежды
+            </p>
+          </div>
+
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+    <button class="button button-primary  portfolio__order-btn">
+      Заказать проект
+    </button>
+  </section>
+
+  <section class="offer">
+
+    <div class="container offer__container">
+      <div class="offer__decor-item offer__decor-item--curly-braces-left">
+        { }
+      </div>
+      <div class="offer__decor-item offer__decor-item--num">
+        #
+      </div>
+      <div class="offer__decor-item offer__decor-item--tag-braces">
+        &lt;/&gt;
+      </div>
+      <div class="offer__decor-item offer__decor-item--div">
+        &lt;div&gt;
+      </div>
+      <div class="offer__decor-item offer__decor-item--curly-braces-right">
+        { }
+      </div>
+
+      <h2 class="offer__title">
+        Адаптивная вёрстка под все устройства
+        и&nbsp;браузеры от&nbsp;1000 рублей всего за&nbsp;4&nbsp;часа.*
+      </h2>
+      <p class="offer__text">
+        * Срок и&nbsp;стоимость могут отличаться от&nbsp;заявленных и&nbsp;рассчитываются индивидуально,
+        в&nbsp;зависимости от&nbsp;сложности задач.
+      </p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer__container">
+      <div class="footer__upper">
+        <nav class="footer__nav">
+          <ul class="footer__menu">
+            <li class="menu-item footer__menu-item menu-item--services">
+              Услуги
+            </li>
+            <li class="menu-item footer__menu-item menu-item--portfolio">
+              Портфолио
+            </li>
+            <li class="menu-item footer__menu-item menu-item--prices">
+              Стоимость
+            </li>
+          </ul>
+        </nav>
+        <div class="footer__contacts">
+          <i class="footer__phone-icon fas fa-phone-alt"></i>
+          <a class="footer__tel-link" href="tel:+74999955577">
+            +7 (499) 995-55-77
+          </a>
+          <i class="footer__envelope-icon fas fa-envelope"></i>
+          <a class="footer__email-link" href="email:dmitry@alekseev.com">
+            dmitry@alekseev.com
+          </a>
+        </div>
+        <div class="footer__socials">
+          <button class="button button-secondary footer__submit-btn">
+            Заказать звонок
+          </button>
+          <div class="footer__socials-items-container">
+            <a href="#" class="footer__socials-item footer__socials-item--vk"></a>
+            <a href="#" class="footer__socials-item footer__socials-item--fb"></a>
+            <a href="#" class="footer__socials-item footer__socials-item--tw"></a>
+            <a href="#" class="footer__socials-item footer__socials-item--inst"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer__lower">
+      <p class="footer__copyright">
+        &copy;&nbsp;Дмитрий Алексеев, 2020&nbsp;&mdash; 2021
+      </p>
+    </div>
+  </footer>
+
+</body>
+
+</html>

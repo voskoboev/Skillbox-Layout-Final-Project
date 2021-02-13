@@ -4,19 +4,19 @@ initSwiper();
 
 // moveHeaderElementsOnLoad();
 
-// moveOfferElementsOnHover();
+moveOfferElementsOnHover();
 
-// scrollToServices();
-// scrollToPortfolio();
-// scrollToPrices();
-// scrollToTop();
+scrollToServices();
+scrollToPortfolio();
+scrollToPrices();
+scrollToTop();
 
-// showModalWindow();
-// closeModalWindow();
-// submitFormAndShowSuccessMessage();
+showModalWindow();
+closeModalWindow();
+submitFormAndShowSuccessMessage();
 
-// toggleMobileMenu();
-// closeMobileMenu();
+toggleMobileMenu();
+closeMobileMenu();
 
 function initSwiper() {
   const slider = document.querySelector('.swiper-container');
@@ -39,7 +39,7 @@ function initSwiper() {
     breakpoints: {
       970: { 
         slidesPerView: 2,
-        centeredSlides: 'true',
+        // centeredSlides: 'true',
         spaceBetween: 36,
 
       },

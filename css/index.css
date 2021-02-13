@@ -428,10 +428,18 @@ a {
   }
 }
 
-@media screen and (min-width: 321px) and (max-width: 645px) {
+@media screen and (min-width: 371px) and (max-width: 645px) {
   .header__decor-item--small-div {
     top: 300px;
     left: 100px;
+    font-size: 25px;
+  }
+}
+
+@media screen and (min-width: 321px) and (max-width: 370px) {
+  .header__decor-item--small-div {
+    top: 300px;
+    left: 50px;
     font-size: 25px;
   }
 }
@@ -568,10 +576,18 @@ a {
   }
 }
 
-@media screen and (min-width: 321px) and (max-width: 645px) {
+@media screen and (min-width: 371px) and (max-width: 645px) {
   .header__decor-item--tag-braces-mobile {
     top: 150px;
     left: 200px;
+    font-size: 25px;
+  }
+}
+
+@media screen and (min-width: 321px) and (max-width: 370px) {
+  .header__decor-item--tag-braces-mobile {
+    top: 130px;
+    left: 150px;
     font-size: 25px;
   }
 }
@@ -898,10 +914,16 @@ a {
   }
 }
 
-@media screen and (min-width: 321px) and (max-width: 900px) {
+@media screen and (min-width: 341px) and (max-width: 900px) {
   .header__upper-right-side {
     margin-right: auto;
     margin-left: 40px;
+  }
+}
+
+@media screen and (min-width: 340px) and (max-width: 340px) {
+  .header__upper-right-side {
+    margin: 0 auto;
   }
 }
 
@@ -1102,9 +1124,18 @@ a {
   margin-bottom: 48px;
 }
 
-@media screen and (min-width: 321px) and (max-width: 980px) {
+@media screen and (min-width: 551px) and (max-width: 850px) {
   .header__text {
     font-size: 17px;
+  }
+}
+
+@media screen and (min-width: 321px) and (max-width: 550px) {
+  .header__text {
+    font-size: 17px;
+    text-align: center;
+    padding-right: 30px;
+    padding-left: 30px;
   }
 }
 
@@ -1304,6 +1335,13 @@ a {
   margin-bottom: 93px;
 }
 
+@media screen and (min-width: 321px) and (max-width: 645px) {
+  .services__title {
+    font-size: 30px;
+    margin-bottom: 43px;
+  }
+}
+
 @media screen and (max-width: 320px) {
   .services__title {
     font-size: 30px;
@@ -1329,6 +1367,17 @@ a {
   }
 }
 
+@media screen and (min-width: 321px) and (max-width: 1023px) {
+  .services__features-flex-container {
+    padding-left: 100px;
+    padding-right: 100px;
+    margin: 0;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
 @media screen and (max-width: 320px) {
   .services__features-flex-container {
     padding-left: 0;
@@ -1350,6 +1399,12 @@ a {
           flex-direction: column;
 }
 
+@media screen and (min-width: 321px) and (max-width: 759px) {
+  .services__feature:not(:last-child) {
+    margin-bottom: 25px;
+  }
+}
+
 @media screen and (max-width: 320px) {
   .services__feature {
     -webkit-box-align: center;
@@ -1363,7 +1418,7 @@ a {
   margin-right: 42px;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 760px) and (max-width: 1024px) {
   .services__feature:not(:last-child) {
     margin-right: 0;
   }
@@ -1372,6 +1427,18 @@ a {
   }
   .services__feature:last-child {
     margin-top: 81px;
+  }
+}
+
+@media screen and (min-width: 321px) and (max-width: 759px) {
+  .services__feature:not(:last-child) {
+    margin-right: 0;
+  }
+  .services__feature:nth-child(3) {
+    margin-top: 0;
+  }
+  .services__feature:last-child {
+    margin-top: 0;
   }
 }
 
@@ -1395,7 +1462,7 @@ a {
       align-self: center;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 645px) {
   .services__img {
     width: 61px;
     height: 61px;
@@ -1417,7 +1484,7 @@ a {
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 645px) {
   .services__feature-title {
     font-size: 16px;
     line-height: 24px;
@@ -1433,18 +1500,19 @@ a {
   margin: 91px auto 102px;
 }
 
-@media screen and (min-width: 471px) and (max-width: 1024px) {
+@media screen and (min-width: 646px) and (max-width: 1024px) {
   .services__price-info-btn {
     width: 320px;
     min-height: 68px;
   }
 }
 
-@media screen and (min-width: 321px) and (max-width: 470px) {
+@media screen and (min-width: 321px) and (max-width: 645px) {
   .services__price-info-btn {
     width: 240px;
     min-height: 46px;
     font-size: 15px;
+    margin: 0 auto 70px;
   }
 }
 
@@ -1503,7 +1571,7 @@ a {
   margin-bottom: 105px;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 645px) {
   .portfolio__title {
     font-size: 30px;
     line-height: 30px;

@@ -198,7 +198,7 @@ function submitFormAndShowSuccessMessage() {
 }
 
 function toggleMobileMenu() {
-  const body = document.querySelector('.body');
+  const body = document.querySelector('body');
   const nav = document.querySelector('.header__nav');
   const mobileMenuBtn = document.querySelector('.header__burger-menu-btn');
   const mobileMenuBtnLine = document.querySelector('.header__burger-menu-btn-line');
@@ -212,7 +212,7 @@ function toggleMobileMenu() {
 }
 
 function closeMobileMenu() {
-  const body = document.querySelector('.body');
+  const body = document.querySelector('body');
   const nav = document.querySelector('.header__nav');
   const menuItem = document.querySelectorAll('.menu-item');
   const mobileMenuBtnLine = document.querySelector('.header__burger-menu-btn-line');

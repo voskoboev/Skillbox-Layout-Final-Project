@@ -4,7 +4,7 @@
   font-weight: 400;
   src: local(''),
     url('../fonts/roboto-v20-latin_cyrillic-regular.woff2') format('woff2'),
-    url('../fonts/roboto-v20-latin_cyrillic-regular.woff') format('woff')
+    url('../fonts/roboto-v20-latin_cyrillic-regular.woff') format('woff');
 }
 
 @font-face {
@@ -13,7 +13,7 @@
   font-weight: 500;
   src: local(''),
     url('../fonts/roboto-v20-latin_cyrillic-500.woff2') format('woff2'),
-    url('../fonts/roboto-v20-latin_cyrillic-500.woff') format('woff')
+    url('../fonts/roboto-v20-latin_cyrillic-500.woff') format('woff');
 }
 
 @font-face {
@@ -22,7 +22,7 @@
   font-weight: 700;
   src: local(''),
     url('../fonts/roboto-v20-latin_cyrillic-700.woff2') format('woff2'),
-    url('../fonts/roboto-v20-latin_cyrillic-700.woff') format('woff')
+    url('../fonts/roboto-v20-latin_cyrillic-700.woff') format('woff');
 }
 
 @font-face {
@@ -31,7 +31,7 @@
   font-weight: 900;
   src: local(''),
     url('../fonts/roboto-v20-latin_cyrillic-900.woff2') format('woff2'),
-    url('../fonts/roboto-v20-latin_cyrillic-900.woff') format('woff')
+    url('../fonts/roboto-v20-latin_cyrillic-900.woff') format('woff');
 }
 
 $primary-color: #ff2f96;
@@ -49,8 +49,16 @@ Cantarell,
 'Helvetica Neue',
 sans-serif;
 
+@mixin flex($jcc: start, $ai: normal, $fld: row) {
+  display: flex;
+  justify-content: $jcc;
+  align-items: $ai;
+  flex-direction: $fld;
+}
+
 html {
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 *,
@@ -89,9 +97,7 @@ body {
 
   &__form {
     position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    @include flex(space-around, normal, column);
     width: 370px;
     min-height: 370px;
     padding: 30px;
@@ -117,9 +123,7 @@ body {
 
   &__close-btn {
     position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex(center, center, row);
     top: 5px;
     right: 5px;
     width: 35px;
@@ -247,9 +251,7 @@ body {
 }
 
 .button-primary {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex(center, center, row);
   width: 271px;
   min-height: 61px;
   padding: 20px;
@@ -271,8 +273,6 @@ body {
     background-color: #ff4e2e;
   }
 }
-
-
 
 .button-secondary {
   display: block;
@@ -381,6 +381,12 @@ body {
     }
   }
 
+  .curly-braces--active {
+    opacity: 0;
+    transform: translate(-300px, -300px);
+    transition: 1.8s;
+  }
+
   &__decor-item--small-div {
     top: 160px;
     left: 410px;
@@ -391,7 +397,6 @@ body {
     -webkit-text-fill-color: transparent;
     transform: rotate(345deg);
   }
-
 
   @media screen and (max-width: 1024px) {
     &__decor-item--small-div {
@@ -431,6 +436,12 @@ body {
     }
   }
 
+  .small-div--active {
+    opacity: 0;
+    transform: translate(0, -300px);
+    transition: 1.8s;
+  }
+
   &__decor-item--num {
     left: -130px;
     top: 360px;
@@ -467,6 +478,12 @@ body {
     }
   }
 
+  .num--active {
+    opacity: 0;
+    transform: translate(-300px, 0);
+    transition: 1.8s;
+  }
+
   &__decor-item--big-div {
     top: 533px;
     left: 572px;
@@ -485,6 +502,12 @@ body {
     &__decor-item--big-div {
       display: none;
     }
+  }
+
+  .big-div--active {
+    opacity: 0;
+    transform: translate(0, 250px);
+    transition: 1.8s;
   }
 
   &__decor-item--tag-braces {
@@ -518,6 +541,12 @@ body {
       font-size: 16px;
       transform: rotate(330deg);
     }
+  }
+
+  .tag-braces--active {
+    opacity: 0;
+    transform: translate(0, 100px);
+    transition: 1.8s;
   }
 
   &__decor-item--tag-braces-mobile {
@@ -570,17 +599,14 @@ body {
 
   &__upper {
     position: relative;
-    display: flex;
-    justify-content: start;
-    align-items: baseline;
+    @include flex(start, baseline, row);
     padding-top: 23px;
     padding-bottom: 45px;
   }
 
   @media screen and (min-width: 471px) and (max-width: 1024px) {
     &__upper {
-      display: flex;
-      justify-content: space-between;
+      @include flex(space-between, normal, row);
       width: 100vw;
       padding-top: 30px;
       padding-left: 40px;
@@ -590,9 +616,7 @@ body {
 
   @media screen and (min-width: 321px) and (max-width: 470px) {
     &__upper {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      @include flex(space-between, center, row);
       width: 100vw;
       padding-top: 30px;
       padding-left: 40px;
@@ -643,10 +667,7 @@ body {
 
   @media screen and (max-width: 1024px) {
     &__menu {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      @include flex(center, center, column);
       padding-top: 100px;
     }
   }
@@ -799,8 +820,8 @@ body {
   @media screen and (max-width: 1024px) {
     &__menu-item {
       padding-bottom: 100px;
-      margin-bottom: 50px;
       margin-right: 0;
+      margin-bottom: 50px;
       min-width: 300px;
       border-bottom: 1px solid #8993ad;
       text-align: center;
@@ -983,9 +1004,7 @@ body {
   @media screen and (max-width: 645px) {
     &__lower-left-side {
       padding-top: 15px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      @include flex(start, center, column);
       order: 1;
       background-color: #fff;
     }
@@ -1049,7 +1068,6 @@ body {
       font-size: 17px;
     }
   }
-
 
   @media screen and (max-width: 320px) {
     &__text {
@@ -1259,7 +1277,6 @@ body {
   &__features-flex-container {
     display: flex;
     justify-content: space-between;
-
   }
 
   @media screen and (min-width: 1024px) and (max-width: 1024px) {
@@ -1290,9 +1307,7 @@ body {
   }
 
   &__feature {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+    @include flex(center, normal, column);
   }
 
   @media screen and (min-width: 321px) and (max-width: 759px) {
@@ -1622,7 +1637,7 @@ body {
 
   .swiper-button {
     border-radius: 50%;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 0 20px rgba(0, 0, 0, .08);
     z-index: 10000;
   }
 
@@ -1651,8 +1666,8 @@ body {
 
   .swiper-button-next {
     position: absolute;
-    right: -30px;
     top: 140px;
+    right: -30px;
     width: 60px;
     height: 60px;
     z-index: 1000;
@@ -1943,9 +1958,7 @@ body {
   }
 
   &__upper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flex(space-between, center, row);
     flex-wrap: wrap;
     padding-top: 72px;
     padding-bottom: 77px;
@@ -2068,11 +2081,9 @@ body {
 
   &__email-link {
     padding-left: 10px;
-
     font-size: 25px;
     font-weight: 400;
     color: #000;
-
   }
 
   @media screen and (max-width: 570px) {

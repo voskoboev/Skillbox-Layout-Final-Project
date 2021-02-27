@@ -29,6 +29,7 @@
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 *,
@@ -72,12 +73,15 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: normal;
+      -ms-flex-align: normal;
+          align-items: normal;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
   width: 370px;
   min-height: 370px;
   padding: 30px;
@@ -112,6 +116,10 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   top: 5px;
   right: 5px;
   width: 35px;
@@ -252,6 +260,10 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   width: 271px;
   min-height: 61px;
   padding: 20px;
@@ -386,6 +398,14 @@ body {
   }
 }
 
+.header .curly-braces--active {
+  opacity: 0;
+  -webkit-transform: translate(-300px, -300px);
+          transform: translate(-300px, -300px);
+  -webkit-transition: 1.8s;
+  transition: 1.8s;
+}
+
 .header__decor-item--small-div {
   top: 160px;
   left: 410px;
@@ -438,6 +458,14 @@ body {
   }
 }
 
+.header .small-div--active {
+  opacity: 0;
+  -webkit-transform: translate(0, -300px);
+          transform: translate(0, -300px);
+  -webkit-transition: 1.8s;
+  transition: 1.8s;
+}
+
 .header__decor-item--num {
   left: -130px;
   top: 360px;
@@ -475,6 +503,14 @@ body {
   }
 }
 
+.header .num--active {
+  opacity: 0;
+  -webkit-transform: translate(-300px, 0);
+          transform: translate(-300px, 0);
+  -webkit-transition: 1.8s;
+  transition: 1.8s;
+}
+
 .header__decor-item--big-div {
   top: 533px;
   left: 572px;
@@ -494,6 +530,14 @@ body {
   .header__decor-item--big-div {
     display: none;
   }
+}
+
+.header .big-div--active {
+  opacity: 0;
+  -webkit-transform: translate(0, 250px);
+          transform: translate(0, 250px);
+  -webkit-transition: 1.8s;
+  transition: 1.8s;
 }
 
 .header__decor-item--tag-braces {
@@ -530,6 +574,14 @@ body {
     -webkit-transform: rotate(330deg);
             transform: rotate(330deg);
   }
+}
+
+.header .tag-braces--active {
+  opacity: 0;
+  -webkit-transform: translate(0, 100px);
+          transform: translate(0, 100px);
+  -webkit-transition: 1.8s;
+  transition: 1.8s;
 }
 
 .header__decor-item--tag-braces-mobile {
@@ -593,6 +645,10 @@ body {
   -webkit-box-align: baseline;
       -ms-flex-align: baseline;
           align-items: baseline;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   padding-top: 23px;
   padding-bottom: 45px;
 }
@@ -605,6 +661,13 @@ body {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+    -webkit-box-align: normal;
+        -ms-flex-align: normal;
+            align-items: normal;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
     width: 100vw;
     padding-top: 30px;
     padding-left: 40px;
@@ -623,6 +686,10 @@ body {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
     width: 100vw;
     padding-top: 30px;
     padding-left: 40px;
@@ -690,16 +757,16 @@ body {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     padding-top: 100px;
   }
 }
@@ -867,8 +934,8 @@ body {
 @media screen and (max-width: 1024px) {
   .header__menu-item {
     padding-bottom: 100px;
-    margin-bottom: 50px;
     margin-right: 0;
+    margin-bottom: 50px;
     min-width: 300px;
     border-bottom: 1px solid #8993ad;
     text-align: center;
@@ -1062,13 +1129,16 @@ body {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
@@ -1390,6 +1460,9 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: normal;
+      -ms-flex-align: normal;
+          align-items: normal;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -1749,8 +1822,8 @@ body {
 
 .portfolio .swiper-button-next {
   position: absolute;
-  right: -30px;
   top: 140px;
+  right: -30px;
   width: 60px;
   height: 60px;
   z-index: 1000;
@@ -2067,6 +2140,10 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   padding-top: 72px;

@@ -3,7 +3,6 @@
 initSwiper();
 
 moveHeaderElementsOnLoad();
-
 moveOfferElementsOnHover();
 
 scrollToServices();
@@ -11,9 +10,7 @@ scrollToPortfolio();
 scrollToPrices();
 scrollToTop();
 
-showModalWindow();
-closeModalWindow();
-submitFormAndShowSuccessMessage();
+manageModalWindow();
 
 toggleMobileMenu();
 closeMobileMenu();
@@ -37,18 +34,17 @@ function initSwiper() {
       type: 'bullets',
     },
     breakpoints: {
-      970: { 
+      970: {
         slidesPerView: 2,
         spaceBetween: 36,
       },
-      1280: { 
+      1280: {
         slidesPerView: 3,
         spaceBetween: 30,
       }
-    
+
     }
   });
-
 }
 
 function moveHeaderElementsOnLoad() {
@@ -91,40 +87,134 @@ function moveOfferElementsOnHover() {
 function scrollToServices() {
   const servicesMenuItems = document.querySelectorAll('.menu-item--services');
 
-  servicesMenuItems.forEach(el => {
-    el.addEventListener('click', () => {
-      window.scrollTo({
-        top: 760,
-        behavior: 'smooth'
+  if (window.innerWidth > 1024) {
+    servicesMenuItems.forEach(el => {
+      el.addEventListener('click', () => {
+        window.scrollTo({
+          top: 760,
+          behavior: 'smooth'
+        });
       });
     });
-  });
+  }
+
+  if (window.innerWidth > 768 && window.innerWidth <= 1024) {
+    servicesMenuItems.forEach(el => {
+      el.addEventListener('click', () => {
+        window.scrollTo({
+          top: 800,
+          behavior: 'smooth'
+        });
+      });
+    });
+  }
+
+  if (window.innerWidth > 320 && window.innerWidth <= 768) {
+    servicesMenuItems.forEach(el => {
+      el.addEventListener('click', () => {
+        window.scrollTo({
+          top: 520,
+          behavior: 'smooth'
+        });
+      });
+    });
+  }
+
+  if (window.innerWidth <= 320) {
+    servicesMenuItems.forEach(el => {
+      el.addEventListener('click', () => {
+        window.scrollTo({
+          top: 670,
+          behavior: 'smooth'
+        });
+      });
+    });
+  }
 }
 
 function scrollToPortfolio() {
   const portfolioMenuItem = document.querySelectorAll('.menu-item--portfolio');
 
-  portfolioMenuItem.forEach(el => {
-    el.addEventListener('click', () => {
-      window.scrollTo({
-        top: 1420,
-        behavior: 'smooth'
+  if (window.innerWidth > 1024) {
+    portfolioMenuItem.forEach(el => {
+      el.addEventListener('click', () => {
+        window.scrollTo({
+          top: 1420,
+          behavior: 'smooth'
+        });
       });
     });
-  });
+  }
+
+  if (window.innerWidth > 768 && window.innerWidth <= 1024) {
+    portfolioMenuItem.forEach(el => {
+      el.addEventListener('click', () => {
+        window.scrollTo({
+          top: 1680,
+          behavior: 'smooth'
+        });
+      });
+    });
+  }
+
+  if (window.innerWidth > 320 && window.innerWidth <= 768) {
+    portfolioMenuItem.forEach(el => {
+      el.addEventListener('click', () => {
+        window.scrollTo({
+          top: 1780,
+          behavior: 'smooth'
+        });
+      });
+    });
+  }
+
+  if (window.innerWidth <= 320) {
+    portfolioMenuItem.forEach(el => {
+      el.addEventListener('click', () => {
+        window.scrollTo({
+          top: 1550,
+          behavior: 'smooth'
+        });
+      });
+    });
+  }
 }
 
 function scrollToPrices() {
   const servicesMenuItem = document.querySelectorAll('.menu-item--prices');
 
-  servicesMenuItem.forEach(el => {
-    el.addEventListener('click', () => {
-      window.scrollTo({
-        top: 2500,
-        behavior: 'smooth'
+  if (window.innerWidth >= 425) {
+    servicesMenuItem.forEach(el => {
+      el.addEventListener('click', () => {
+        window.scrollTo({
+          top: 2600, // 2600 desktop 1024
+          behavior: 'smooth'
+        });
       });
     });
-  });
+  }
+
+  if (window.innerWidth > 320 && window.innerWidth < 425) {
+    servicesMenuItem.forEach(el => {
+      el.addEventListener('click', () => {
+        window.scrollTo({
+          top: 2600,
+          behavior: 'smooth'
+        });
+      });
+    });
+  }
+
+  if (window.innerWidth <= 320) {
+    servicesMenuItem.forEach(el => {
+      el.addEventListener('click', () => {
+        window.scrollTo({
+          top: 3000,
+          behavior: 'smooth'
+        });
+      });
+    });
+  }
 }
 
 function scrollToTop() {
@@ -149,70 +239,72 @@ function scrollToTop() {
   });
 }
 
-function showModalWindow() {
-  const body = document.querySelector('body');
-  const modalWindow = document.querySelector('.modal-window');
-  const btn = document.querySelectorAll('.button');
+function manageModalWindow() {
+  showModalWindow();
+  closeModalWindow();
+  submitFormAndShowSuccessMessage();
 
-  btn.forEach(el => {
-    el.addEventListener('click', ev => {
-      ev.preventDefault();
-      body.classList.add('stop-scroll');
-      modalWindow.classList.add('modal-window--active');
+  function showModalWindow() {
+    const body = document.querySelector('body');
+    const modalWindow = document.querySelector('.modal-window');
+    const btn = document.querySelectorAll('.button');
+
+    btn.forEach(el => {
+      el.addEventListener('click', ev => {
+        ev.preventDefault();
+        body.classList.add('stop-scroll');
+        modalWindow.classList.add('modal-window--active');
+      });
     });
-  });
-}
+  }
 
-function closeModalWindow() {
-  const body = document.querySelector('body');
-  const modalWindow = document.querySelector('.modal-window');
-  const closeBtn = document.querySelector('.modal-window__close-btn');
+  function closeModalWindow() {
+    const body = document.querySelector('body');
+    const modalWindow = document.querySelector('.modal-window');
+    const closeBtn = document.querySelector('.modal-window__close-btn');
 
-  closeBtn.addEventListener('click', ev => {
-    ev.preventDefault();
-    body.classList.remove('stop-scroll');
-    modalWindow.classList.remove('modal-window--active');
-  });
-}
-
-// function checkInputs() {
-//   const inputsValues = document.querySelectorAll('.modal-window__input').value;
-//   const telLabel = document.querySelector('.modal-window__tel-label');
-
-//   if (inputsValues === '') {
-
-//     const div = document.body.createElement('div');
-//     div.classList.add('modal-window__check-note');
-//     div.textContent = 'Заполните все поля';
-
-//     telLabel.after(div);
-//   }
-// }
-
-
-function submitFormAndShowSuccessMessage() {
-  const body = document.querySelector('body');
-  const modalWindow = document.querySelector('.modal-window');
-  const form = document.querySelector('.modal-window__form');
-  const submitBtn = document.querySelector('.modal-window__submit-btn');
-  const formSuccess = document.querySelector('.modal-window__form-success');
-
-  submitBtn.addEventListener('click', () => {
-
-    // checkInputs();
-
-    form.style.display = 'none';
-    formSuccess.classList.add('modal-window__form-success--active');
-
-    setTimeout(fadeOut, 1000);
-
-    function fadeOut() {
+    closeBtn.addEventListener('click', ev => {
+      ev.preventDefault();
       body.classList.remove('stop-scroll');
       modalWindow.classList.remove('modal-window--active');
-      form.style.display = 'flex';
-      formSuccess.classList.remove('modal-window__form-success--active');
-    }
-  });
+
+      document.querySelector('.modal-window__input-name').value = '';
+      document.querySelector('.modal-window__input-tel').value = '';
+    });
+  }
+
+  function submitFormAndShowSuccessMessage() {
+    const body = document.querySelector('body');
+    const modalWindow = document.querySelector('.modal-window');
+    const form = document.querySelector('.modal-window__form');
+    const submitBtn = document.querySelector('.modal-window__submit-btn');
+    const formSuccess = document.querySelector('.modal-window__form-success');
+
+    submitBtn.addEventListener('click', () => {
+      let inputNameValue = document.querySelector('.modal-window__input-name').value;
+      let inputTelValue = document.querySelector('.modal-window__input-tel').value;
+
+      if (inputNameValue === '' || inputTelValue === '') {
+        alert('Заполните все поля!');
+        return;
+      }
+
+      form.style.display = 'none';
+      formSuccess.classList.add('modal-window__form-success--active');
+
+      setTimeout(fadeOut, 1000);
+
+      function fadeOut() {
+        body.classList.remove('stop-scroll');
+        modalWindow.classList.remove('modal-window--active');
+        form.style.display = 'flex';
+        formSuccess.classList.remove('modal-window__form-success--active');
+      }
+
+      document.querySelector('.modal-window__input-name').value = '';
+      document.querySelector('.modal-window__input-tel').value = '';
+    });
+  }
 }
 
 function toggleMobileMenu() {

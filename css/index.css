@@ -1501,9 +1501,18 @@ body {
   }
 }
 
+@media screen and (min-width: 760px) and (max-width: 776px) {
+  .services__feature:nth-child(2) {
+    margin-top: 81px;
+  }
+}
+
 @media screen and (max-width: 759px) {
   .services__feature:not(:last-child) {
     margin-right: 0;
+  }
+  .services__feature:nth-child(2) {
+    margin-top: 0;
   }
   .services__feature:nth-child(3) {
     margin-top: 0;

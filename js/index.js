@@ -262,11 +262,13 @@ function manageModalWindow() {
     const body = document.querySelector('body');
     const modalWindow = document.querySelector('.modal-window');
     const closeBtn = document.querySelector('.modal-window__close-btn');
+    const warning = document.querySelector('.modal-window__warning');
 
     closeBtn.addEventListener('click', ev => {
       ev.preventDefault();
       body.classList.remove('stop-scroll');
       modalWindow.classList.remove('modal-window--active');
+      warning.classList.remove('modal-window__warning--active');
 
       document.querySelector('.modal-window__input-name').value = '';
       document.querySelector('.modal-window__input-tel').value = '';
@@ -281,11 +283,17 @@ function manageModalWindow() {
     const formSuccess = document.querySelector('.modal-window__form-success');
 
     submitBtn.addEventListener('click', () => {
-      let inputNameValue = document.querySelector('.modal-window__input-name').value;
-      let inputTelValue = document.querySelector('.modal-window__input-tel').value;
+      const inputNameValue = document.querySelector('.modal-window__input-name').value;
+      const inputTelValue = document.querySelector('.modal-window__input-tel').value;
+      const warning = document.querySelector('.modal-window__warning');
 
       if (inputNameValue === '' || inputTelValue === '') {
-        alert('Заполните все поля!');
+        if (warning.classList.contains('modal-window__warning--active')) {
+          return;
+        } else {
+          warning.classList.add('modal-window__warning--active');
+        }
+
         return;
       }
 
@@ -299,12 +307,14 @@ function manageModalWindow() {
         modalWindow.classList.remove('modal-window--active');
         form.style.display = 'flex';
         formSuccess.classList.remove('modal-window__form-success--active');
+        warning.classList.remove('modal-window__warning--active')
       }
 
       document.querySelector('.modal-window__input-name').value = '';
       document.querySelector('.modal-window__input-tel').value = '';
     });
   }
+
 }
 
 function toggleMobileMenu() {

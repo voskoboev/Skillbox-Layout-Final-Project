@@ -83,7 +83,7 @@ body {
 }
 
 .stop-scroll {
-  height: 100vh;
+  height: 100%;
   overflow: hidden;
 }
 
@@ -613,7 +613,7 @@ body {
   &__upper {
     position: relative;
     @include flex(start, baseline, row);
-    padding-top: 23px;
+    padding-top: 30px; 
     padding-bottom: 45px;
   }
 
@@ -842,7 +842,7 @@ body {
     }
   }
 
-  @media screen and (max-width: 320px) {
+  @media screen and (max-width: 425px) {
     &__menu-item {
       min-width: 150px;
       padding-bottom: 50px;
@@ -860,20 +860,26 @@ body {
     margin-left: auto;
   }
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (min-width: 901px) and (max-width: 1024px) {
     &__upper-right-side {
       margin-left: 0;
     }
   }
 
-  @media screen and (min-width: 341px) and (max-width: 900px) {
+  @media screen and (min-width: 646px) and (max-width: 900px) {
     &__upper-right-side {
-      margin-right: auto;
       margin-left: 40px;
     }
   }
 
-  @media screen and (min-width: 340px) and (max-width: 340px) {
+  @media screen and (min-width: 341px) and (max-width: 645px) {
+    &__upper-right-side {
+      margin-top: 5px;
+      margin-left: 0;
+    }
+  }
+
+  @media screen and (max-width: 340px) {
     &__upper-right-side {
       margin: 0 auto;
     }
@@ -897,6 +903,7 @@ body {
   @media screen and (min-width: 321px) and (max-width: 470px) {
     &__tel-link {
       font-size: 15px;
+      margin-right: 0;
     }
   }
 
@@ -1136,14 +1143,14 @@ body {
 
   &__background-img {
     position: absolute;
-    right: -170px;
+    right: -170px; 
     bottom: 0;
     display: block;
   }
 
   @media screen and (min-width: 1920px) {
     &__background-img {
-      left: 100px;
+      left: 10px; 
     }
   }
 
@@ -1191,17 +1198,17 @@ body {
 
   &__person-img {
     position: absolute;
-    right: 135px;
+    right: 135px; 
     bottom: 0;
     display: block;
     width: 435px;
-    height: 638px; // 638
-    margin-left: 92px;
+    height: 638px;
+    margin-left: 92px; 
   }
 
   @media screen and (min-width: 1920px) {
     &__person-img {
-      left: 100px;
+      left: 0;
     }
   }
 
@@ -1344,17 +1351,15 @@ body {
       margin-right: 0;
     }
 
+    &__feature:nth-child(2) {
+      margin-top: 0;
+    }
+
     &__feature:nth-child(3) {
       margin-top: 81px;
     }
 
     &__feature:last-child {
-      margin-top: 81px;
-    }
-  }
-
-  @media screen and (min-width: 760px) and (max-width: 776px) {
-    &__feature:nth-child(2) {
       margin-top: 81px;
     }
   }

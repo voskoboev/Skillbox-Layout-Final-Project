@@ -14,42 +14,30 @@
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#fff">
   <!-- /favicon -->
-
-  <!-- fonts preload-->
-  <!-- <link rel="preload" href="fonts/roboto-v20-latin_cyrillic-regular.woff" as="font" type="font/woff" crossorigin="anonymous">
-  <link rel="preload" href="fonts/roboto-v20-latin_cyrillic-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-
-  <link rel="preload" href="fonts/roboto-v20-latin_cyrillic-500.woff" as="font" type="font/woff" crossorigin="anonymous">
-  <link rel="preload" href="fonts/roboto-v20-latin_cyrillic-500.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-
-  <link rel="preload" href="fonts/roboto-v20-latin_cyrillic-700.woff" as="font" type="font/woff" crossorigin="anonymous">
-  <link rel="preload" href="fonts/roboto-v20-latin_cyrillic-700.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-
-  <link rel="preload" href="fonts/roboto-v20-latin_cyrillic-900.woff" as="font" type="font/woff" crossorigin="anonymous">
-  <link rel="preload" href="fonts/roboto-v20-latin_cyrillic-900.woff2" as="font" type="font/woff2" crossorigin="anonymous"> -->
-  <!-- /fonts preload-->
-
   <link rel="stylesheet" href="libs/reset/reset.css">
   <link rel="stylesheet" href="libs/swiper/swiper-bundle.min.css">
-  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/index.min.css">
   <script src="https://kit.fontawesome.com/5e506a63ff.js" crossorigin="anonymous" defer></script>
   <script src="libs/swiper/swiper-bundle.min.js" defer></script>
-  <script src="js/index.js" defer></script>
+  <script src="libs/inputmask/inputmask.min.js" defer></script>
+  <script src="js/index.min.js" defer></script>
 </head>
 
 <body>
   <div class="modal-window">
-    <form class="modal-window__form" action="#" method="post" name="modal-window-form">
+    <form class="modal-window__form" action="https://formsubmit.co/bevah@yandex.com" method="POST" name="modal-window-form">
       <button class="modal-window__close-btn">
         <i class="modal-window__close-btn-cross fas fa-times"></i>
       </button>
+      <input type="hidden" name="_captcha" value="false">
       <label class="modal-window__name-label">
         Ваше имя
         <input class="modal-window__input modal-window__input-name" type="text" name="name" minlength="1" required>
       </label>
       <label class="modal-window__tel-label">
         Телефон
-        <input class="modal-window__input modal-window__input-tel" type="tel" name="tel" required>
+        <input class="modal-window__input modal-window__input-tel" type="tel" name="tel" required
+          data-validate-field="tel">
       </label>
       <div class="modal-window__warning">
         Заполните все поля!
@@ -190,44 +178,44 @@
       <div class="swiper-container">
         <div class="swiper-wrapper">
           <figure class="swiper-slide">
-            <a href="#" class="swiper-slide-link">
+            <a class="swiper-slide-link" href="#" target="_blank">
               <img class="swiper-img" src="images/psychologist-compressed.jpg" alt="psychologist">
+            </a>
               <figcaption class="swiper-text">
                 Сайт психолога Веры Антоновой
               </figcaption>
-            </a>
           </figure>
           <figure class="swiper-slide">
-            <a href="#" class="swiper-slide-link">
+            <a class="swiper-slide-link" href="#" target="_blank">
               <img class="swiper-img" src="images/kid-shop-compressed.jpg" alt="kid-shop">
+            </a>
               <figcaption class="swiper-text">
                 Сайт магазина детской одежды
               </figcaption>
-            </a>
           </figure>
           <figure class="swiper-slide">
-            <a href="#" class="swiper-slide-link">
+            <a class="swiper-slide-link" href="#" target="_blank">
               <img class="swiper-img" src="images/fishing-shop-compressed.jpg" alt="fishing-shop">
+            </a>
               <figcaption class="swiper-text">
                 Сайт магазина «Рыболов»
               </figcaption>
-            </a>
           </figure>
           <figure class="swiper-slide">
-            <a href="#" class="swiper-slide-link">
+            <a class="swiper-slide-link" href="#" target="_blank">
               <img class="swiper-img" src="images/psychologist-compressed.jpg" alt="psychologist">
+            </a>
               <figcaption class="swiper-text">
                 Сайт психолога Веры Антоновой
               </figcaption>
-            </a>
           </figure>
           <figure class="swiper-slide">
-            <a href="#" class="swiper-slide-link">
+            <a class="swiper-slide-link" href="#" target="_blank">
               <img class="swiper-img" src="images/kid-shop-compressed.jpg" alt="kid-shop">
+            </a>
               <figcaption class="swiper-text">
                 Сайт магазина детской одежды
               </figcaption>
-            </a>
           </figure>
         </div>
       </div>

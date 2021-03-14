@@ -55,7 +55,7 @@ body {
 }
 
 .stop-scroll {
-  height: 100vh;
+  height: 100%;
   overflow: hidden;
 }
 
@@ -662,7 +662,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  padding-top: 23px;
+  padding-top: 30px;
   padding-bottom: 45px;
 }
 
@@ -956,7 +956,7 @@ body {
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 425px) {
   .header__menu-item {
     min-width: 150px;
     padding-bottom: 50px;
@@ -974,20 +974,26 @@ body {
   margin-left: auto;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 901px) and (max-width: 1024px) {
   .header__upper-right-side {
     margin-left: 0;
   }
 }
 
-@media screen and (min-width: 341px) and (max-width: 900px) {
+@media screen and (min-width: 646px) and (max-width: 900px) {
   .header__upper-right-side {
-    margin-right: auto;
     margin-left: 40px;
   }
 }
 
-@media screen and (min-width: 340px) and (max-width: 340px) {
+@media screen and (min-width: 341px) and (max-width: 645px) {
+  .header__upper-right-side {
+    margin-top: 5px;
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 340px) {
   .header__upper-right-side {
     margin: 0 auto;
   }
@@ -1011,6 +1017,7 @@ body {
 @media screen and (min-width: 321px) and (max-width: 470px) {
   .header__tel-link {
     font-size: 15px;
+    margin-right: 0;
   }
 }
 
@@ -1281,7 +1288,7 @@ body {
 
 @media screen and (min-width: 1920px) {
   .header__background-img {
-    left: 100px;
+    left: 10px;
   }
 }
 
@@ -1339,7 +1346,7 @@ body {
 
 @media screen and (min-width: 1920px) {
   .header__person-img {
-    left: 100px;
+    left: 0;
   }
 }
 
@@ -1504,16 +1511,13 @@ body {
   .services__feature:not(:last-child) {
     margin-right: 0;
   }
+  .services__feature:nth-child(2) {
+    margin-top: 0;
+  }
   .services__feature:nth-child(3) {
     margin-top: 81px;
   }
   .services__feature:last-child {
-    margin-top: 81px;
-  }
-}
-
-@media screen and (min-width: 760px) and (max-width: 776px) {
-  .services__feature:nth-child(2) {
     margin-top: 81px;
   }
 }

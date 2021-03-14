@@ -1,6 +1,7 @@
 'use strict';
 
 initSwiper();
+inputMask();
 
 moveHeaderElementsOnLoad();
 moveOfferElementsOnHover();
@@ -21,7 +22,6 @@ function initSwiper() {
   const mySwiper = new Swiper(slider, {
     speed: 400,
     initialSlide: 0,
-    // centeredSlides: true,
     slidesPerView: 1,
     loop: true,
     slideClass: 'swiper-slide',
@@ -42,9 +42,15 @@ function initSwiper() {
         slidesPerView: 3,
         spaceBetween: 30,
       }
-
     }
   });
+}
+
+function inputMask() {
+  const telInput = document.querySelector('.modal-window__input-tel');
+  const im = new Inputmask('+7 (999) 999-99-99');
+
+  im.mask(telInput);
 }
 
 function moveHeaderElementsOnLoad() {
@@ -62,7 +68,7 @@ function moveHeaderElementsOnLoad() {
         decorNum.classList.add('num--active');
         decorBigDiv.classList.add('big-div--active');
         decorTagBraces.classList.add('tag-braces--active');
-      }, 400);
+      }, 600);
     }
   }
 }
@@ -91,14 +97,14 @@ function scrollToServices() {
     servicesMenuItems.forEach(el => {
       el.addEventListener('click', () => {
         window.scrollTo({
-          top: 760,
+          top: 790,
           behavior: 'smooth'
         });
       });
     });
   }
 
-  if (window.innerWidth > 768 && window.innerWidth <= 1024) {
+  if (window.innerWidth > 901 && window.innerWidth <= 1024) {
     servicesMenuItems.forEach(el => {
       el.addEventListener('click', () => {
         window.scrollTo({
@@ -109,11 +115,22 @@ function scrollToServices() {
     });
   }
 
-  if (window.innerWidth > 320 && window.innerWidth <= 768) {
+  if (window.innerWidth > 646 && window.innerWidth <= 900) {
     servicesMenuItems.forEach(el => {
       el.addEventListener('click', () => {
         window.scrollTo({
-          top: 520,
+          top: 500,
+          behavior: 'smooth'
+        });
+      });
+    });
+  }
+
+  if (window.innerWidth > 320 && window.innerWidth <= 645) {
+    servicesMenuItems.forEach(el => {
+      el.addEventListener('click', () => {
+        window.scrollTo({
+          top: 780,
           behavior: 'smooth'
         });
       });
@@ -146,7 +163,7 @@ function scrollToPortfolio() {
     });
   }
 
-  if (window.innerWidth > 768 && window.innerWidth <= 1024) {
+  if (window.innerWidth > 901 && window.innerWidth <= 1024) {
     portfolioMenuItem.forEach(el => {
       el.addEventListener('click', () => {
         window.scrollTo({
@@ -157,11 +174,33 @@ function scrollToPortfolio() {
     });
   }
 
-  if (window.innerWidth > 320 && window.innerWidth <= 768) {
+  if (window.innerWidth > 760 && window.innerWidth <= 900) {
     portfolioMenuItem.forEach(el => {
       el.addEventListener('click', () => {
         window.scrollTo({
-          top: 1780,
+          top: 1400,
+          behavior: 'smooth'
+        });
+      });
+    });
+  }
+
+  if (window.innerWidth > 426 && window.innerWidth <= 759) {
+    portfolioMenuItem.forEach(el => {
+      el.addEventListener('click', () => {
+        window.scrollTo({
+          top: 1700,
+          behavior: 'smooth'
+        });
+      });
+    });
+  }
+
+  if (window.innerWidth > 320 && window.innerWidth <= 425) {
+    portfolioMenuItem.forEach(el => {
+      el.addEventListener('click', () => {
+        window.scrollTo({
+          top: 1870,
           behavior: 'smooth'
         });
       });
@@ -187,7 +226,7 @@ function scrollToPrices() {
     servicesMenuItem.forEach(el => {
       el.addEventListener('click', () => {
         window.scrollTo({
-          top: 2600, // 2600 desktop 1024
+          top: 2600,
           behavior: 'smooth'
         });
       });
@@ -245,6 +284,7 @@ function manageModalWindow() {
   submitFormAndShowSuccessMessage();
 
   function showModalWindow() {
+    const html = document.querySelector('html');
     const body = document.querySelector('body');
     const modalWindow = document.querySelector('.modal-window');
     const btn = document.querySelectorAll('.button');
@@ -252,6 +292,8 @@ function manageModalWindow() {
     btn.forEach(el => {
       el.addEventListener('click', ev => {
         ev.preventDefault();
+
+        html.style.overflowX = 'visible';
         body.classList.add('stop-scroll');
         modalWindow.classList.add('modal-window--active');
       });
@@ -259,6 +301,7 @@ function manageModalWindow() {
   }
 
   function closeModalWindow() {
+    const html = document.querySelector('html');
     const body = document.querySelector('body');
     const modalWindow = document.querySelector('.modal-window');
     const closeBtn = document.querySelector('.modal-window__close-btn');
@@ -266,6 +309,8 @@ function manageModalWindow() {
 
     closeBtn.addEventListener('click', ev => {
       ev.preventDefault();
+
+      html.style.overflowX = 'hidden';
       body.classList.remove('stop-scroll');
       modalWindow.classList.remove('modal-window--active');
       warning.classList.remove('modal-window__warning--active');
@@ -314,16 +359,17 @@ function manageModalWindow() {
       document.querySelector('.modal-window__input-tel').value = '';
     });
   }
-
 }
 
 function toggleMobileMenu() {
+  const html = document.querySelector('html');
   const body = document.querySelector('body');
   const nav = document.querySelector('.header__nav');
   const mobileMenuBtn = document.querySelector('.header__burger-menu-btn');
   const mobileMenuBtnLine = document.querySelector('.header__burger-menu-btn-line');
 
   mobileMenuBtn.addEventListener('click', () => {
+    html.style.overflowX = 'visible';
     body.classList.toggle('stop-scroll');
     nav.classList.toggle('header__nav--active');
     mobileMenuBtn.classList.toggle('header__burger-menu-btn--active');
@@ -332,6 +378,7 @@ function toggleMobileMenu() {
 }
 
 function closeMobileMenu() {
+  const html = document.querySelector('html');
   const body = document.querySelector('body');
   const nav = document.querySelector('.header__nav');
   const menuItem = document.querySelectorAll('.menu-item');
@@ -339,6 +386,7 @@ function closeMobileMenu() {
 
   menuItem.forEach(el => {
     el.addEventListener('click', () => {
+      html.style.overflowX = 'hidden';
       body.classList.remove('stop-scroll');
       nav.classList.remove('header__nav--active');
       mobileMenuBtnLine.classList.remove('header__burger-menu-btn-line--active');

@@ -1,7 +1,8 @@
 'use strict';
 
-initSwiper();
+// sendEmail();
 inputMask();
+initSwiper();
 
 moveHeaderElementsOnLoad();
 moveOfferElementsOnHover();
@@ -15,6 +16,33 @@ manageModalWindow();
 
 toggleMobileMenu();
 closeMobileMenu();
+
+function sendEmail() {
+  const form = document.querySelector('.modal-window__form');
+  const btn = document.querySelector('.modal-window__submit-btn');
+
+  btn.addEventListener('click', () => {
+    let formData = new FormData(form);
+
+    fetch('mail.php', {
+      method: 'POST',
+      body: FormData
+    })
+      .then(data => {
+        console.log(data);
+        console.log('Отправлено');
+      })
+
+    form.reset();
+  });
+}
+
+function inputMask() {
+  const telInput = document.querySelector('.modal-window__input-tel');
+  const im = new Inputmask('+7 (999) 999-99-99');
+
+  im.mask(telInput);
+}
 
 function initSwiper() {
   const slider = document.querySelector('.swiper-container');
@@ -44,13 +72,6 @@ function initSwiper() {
       }
     }
   });
-}
-
-function inputMask() {
-  const telInput = document.querySelector('.modal-window__input-tel');
-  const im = new Inputmask('+7 (999) 999-99-99');
-
-  im.mask(telInput);
 }
 
 function moveHeaderElementsOnLoad() {
@@ -342,6 +363,19 @@ function manageModalWindow() {
         return;
       }
 
+      let formData = new FormData(form);
+
+      fetch('mail.php', {
+        method: 'POST',
+        body: FormData
+      })
+        .then(data => {
+          console.log(data);
+          console.log('Отправлено');
+        })
+
+      form.reset();
+
       form.style.display = 'none';
       formSuccess.classList.add('modal-window__form-success--active');
 
@@ -355,8 +389,8 @@ function manageModalWindow() {
         warning.classList.remove('modal-window__warning--active')
       }
 
-      document.querySelector('.modal-window__input-name').value = '';
-      document.querySelector('.modal-window__input-tel').value = '';
+      // document.querySelector('.modal-window__input-name').value = '';
+      // document.querySelector('.modal-window__input-tel').value = '';
     });
   }
 }

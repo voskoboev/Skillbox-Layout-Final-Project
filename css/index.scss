@@ -368,7 +368,7 @@ body {
 
   &__decor-item--curly-braces {
     top: 140px;
-    left: -180px;
+    left: -250px;
     font-size: 50px;
     transform: rotate(30deg);
   }
@@ -395,13 +395,30 @@ body {
   }
 
   .curly-braces--active {
-    opacity: 0;
-    transform: translate(-300px, -300px);
-    transition: 1.8s;
+    animation: fly-curly-braces 3s ease;
+  }
+
+  @keyframes fly-curly-braces {
+    0% {
+      transform: translate(0, 0);
+      transform: rotate(30deg);
+      opacity: 1;
+    }
+
+    50% {
+      transform: translate(-300px, -300px);
+      opacity: 0;
+    }
+
+    100% {
+      transform: translate(0, 0);
+      transform: rotate(30deg);
+      opacity: 1;
+    }
   }
 
   &__decor-item--small-div {
-    top: 160px;
+    top: 165px;
     left: 410px;
     font-size: 30px;
     background: linear-gradient($primary-color 50%, $secondary-color);
@@ -450,14 +467,31 @@ body {
   }
 
   .small-div--active {
-    opacity: 0;
-    transform: translate(0, -300px);
-    transition: 1.8s;
+    animation: fly-small-div 3s ease;
+  }
+
+  @keyframes fly-small-div {
+    0% {
+      transform: translate(0, 0);
+      transform: rotate(345deg);
+      opacity: 1;
+    }
+
+    50% {
+      transform: translate(0, -300px);
+      opacity: 0;
+    }
+
+    100% {
+      transform: translate(0, 0);
+      transform: rotate(345deg);
+      opacity: 1;
+    }
   }
 
   &__decor-item--num {
     left: -130px;
-    top: 360px;
+    top: 365px;
     font-size: 55px;
     transform: rotate(15deg);
   }
@@ -492,13 +526,30 @@ body {
   }
 
   .num--active {
-    opacity: 0;
-    transform: translate(-300px, 0);
-    transition: 1.8s;
+   animation: fly-num 3s ease;
+  }
+
+  @keyframes fly-num {
+    0% {
+      transform: translate(0, 0);
+      transform: rotate(15deg);
+      opacity: 1;
+    }
+
+    50% {
+      transform: translate(-300px, 0);
+      opacity: 0;
+    }
+
+    100% {
+      transform: translate(0, 0);
+      transform: rotate(15deg);
+      opacity: 1;
+    }
   }
 
   &__decor-item--big-div {
-    top: 533px;
+    top: 540px;
     left: 572px;
     font-size: 39px;
     transform: rotate(20deg);
@@ -518,13 +569,30 @@ body {
   }
 
   .big-div--active {
-    opacity: 0;
-    transform: translate(0, 250px);
-    transition: 1.8s;
+    animation: fly-big-div 3s ease;
+  }
+
+  @keyframes fly-big-div {
+    0% {
+      transform: translate(0, 0);
+      transform: rotate(20deg);
+      opacity: 1;
+    }
+
+    50% {
+      transform: translate(0, 300px);
+      opacity: 0;
+    }
+
+    100% {
+      transform: translate(0, 0);
+      transform: rotate(20deg);
+      opacity: 1;
+    }
   }
 
   &__decor-item--tag-braces {
-    top: 665px;
+    top: 670px;
     left: 0px;
     font-size: 40px;
     background: linear-gradient($primary-color 50%, $secondary-color);
@@ -557,9 +625,26 @@ body {
   }
 
   .tag-braces--active {
-    opacity: 0;
-    transform: translate(0, 100px);
-    transition: 1.8s;
+    animation: fly-tag-braces 3s ease;
+  }
+
+  @keyframes fly-tag-braces {
+    0% {
+      transform: translate(0, 0);
+      transform: rotate(340deg);
+      opacity: 1;
+    }
+
+    50% {
+      transform: translate(0, 150px);
+      opacity: 0;
+    }
+
+    100% {
+      transform: translate(0, 0);
+      transform: rotate(340deg);
+      opacity: 1;
+    }
   }
 
   &__decor-item--tag-braces-mobile {
@@ -613,13 +698,23 @@ body {
   &__upper {
     position: relative;
     @include flex(start, baseline, row);
-    padding-top: 30px; 
+    padding-top: 30px;
     padding-bottom: 45px;
   }
 
-  @media screen and (min-width: 471px) and (max-width: 1024px) {
+  @media screen and (min-width: 901px) and (max-width: 1024px) {
     &__upper {
-      @include flex(space-between, normal, row);
+      @include flex(space-between, center, row);
+      width: 100vw;
+      padding-top: 30px;
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+  }
+
+  @media screen and (min-width: 471px) and (max-width: 900px) {
+    &__upper {
+      @include flex(space-between, baseline, row);
       width: 100vw;
       padding-top: 30px;
       padding-left: 40px;
@@ -629,7 +724,7 @@ body {
 
   @media screen and (min-width: 321px) and (max-width: 470px) {
     &__upper {
-      @include flex(space-between, center, row);
+      @include flex(space-between, baseline, row);
       width: 100vw;
       padding-top: 30px;
       padding-left: 40px;
@@ -897,13 +992,15 @@ body {
   @media screen and (min-width: 471px) and (max-width: 900px) {
     &__tel-link {
       font-size: 20px;
+      display: flex;
+      align-self: end;
     }
   }
 
   @media screen and (min-width: 321px) and (max-width: 470px) {
     &__tel-link {
-      font-size: 15px;
       margin-right: 0;
+      font-size: 20px;
     }
   }
 
@@ -941,6 +1038,21 @@ body {
     z-index: 10;
   }
 
+  @media screen and (min-width: 321px) and (max-width: 470px) {
+    &__mobile-call-btn {
+      display: flex;
+      align-self: center;
+      margin-bottom: 9px;
+    }
+  }
+
+  @media screen and (max-width: 320px) {
+    &__mobile-call-btn {
+      display: block;
+      margin: 0;
+    }
+  }
+
   &__mobile-call-btn::before {
     content: '';
     position: absolute;
@@ -954,20 +1066,6 @@ body {
     background-position: center center;
     border-radius: 50%;
     z-index: 15;
-  }
-
-  @media screen and (min-width: 321px) and (max-width: 470px) {
-    &__mobile-call-btn {
-      display: block;
-      margin: 0;
-    }
-  }
-
-  @media screen and (max-width: 320px) {
-    &__mobile-call-btn {
-      display: block;
-      margin: 0;
-    }
   }
 
   &__phone-icon {
@@ -1143,14 +1241,14 @@ body {
 
   &__background-img {
     position: absolute;
-    right: -170px; 
+    right: -170px;
     bottom: 0;
     display: block;
   }
 
   @media screen and (min-width: 1920px) {
     &__background-img {
-      left: 10px; 
+      left: 10px;
     }
   }
 
@@ -1198,12 +1296,12 @@ body {
 
   &__person-img {
     position: absolute;
-    right: 135px; 
+    right: 135px;
     bottom: 0;
     display: block;
     width: 435px;
     height: 638px;
-    margin-left: 92px; 
+    margin-left: 92px;
   }
 
   @media screen and (min-width: 1920px) {

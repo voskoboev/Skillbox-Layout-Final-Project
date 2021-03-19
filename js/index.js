@@ -372,7 +372,7 @@ function manageModalWindow() {
         .then(data => {
           console.log(data);
           console.log('Отправлено');
-        })
+        });
 
       form.reset();
 

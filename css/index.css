@@ -51,7 +51,6 @@ body {
   overflow-x: hidden;
   font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   background-color: #fff;
-  width: 100vw;
 }
 
 .stop-scroll {
@@ -62,6 +61,12 @@ body {
 .modal-window {
   position: fixed;
   display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 100%;
   height: 100%;
   background-color: rgba(137, 147, 173, 0.5);
@@ -69,7 +74,9 @@ body {
 }
 
 .modal-window--active {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .modal-window__form {
@@ -89,7 +96,6 @@ body {
   width: 370px;
   min-height: 370px;
   padding: 30px;
-  margin: 100px auto;
   border: 2px solid #ff4e2e;
   border-radius: 2%;
   text-align: center;

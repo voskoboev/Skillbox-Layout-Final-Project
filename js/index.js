@@ -3,17 +3,13 @@
 // sendEmail();
 inputMask();
 initSwiper();
-
 moveHeaderElementsOnLoad();
 moveOfferElementsOnHover();
-
 scrollToServices();
 scrollToPortfolio();
 scrollToPrices();
 scrollToTop();
-
 manageModalWindow();
-
 toggleMobileMenu();
 closeMobileMenu();
 
@@ -367,27 +363,27 @@ function manageModalWindow() {
 
       fetch('mail.php', {
         method: 'POST',
-        body: FormData
+        body: formData
       })
         .then(data => {
           console.log(data);
           console.log('Отправлено');
+
+          form.reset();
+
+          form.style.display = 'none';
+          formSuccess.classList.add('modal-window__form-success--active');
+
+          setTimeout(fadeOut, 1000);
+
+          function fadeOut() {
+            body.classList.remove('stop-scroll');
+            modalWindow.classList.remove('modal-window--active');
+            form.style.display = 'flex';
+            formSuccess.classList.remove('modal-window__form-success--active');
+            warning.classList.remove('modal-window__warning--active');
+          }
         });
-
-      form.reset();
-
-      form.style.display = 'none';
-      formSuccess.classList.add('modal-window__form-success--active');
-
-      setTimeout(fadeOut, 1000);
-
-      function fadeOut() {
-        body.classList.remove('stop-scroll');
-        modalWindow.classList.remove('modal-window--active');
-        form.style.display = 'flex';
-        formSuccess.classList.remove('modal-window__form-success--active');
-        warning.classList.remove('modal-window__warning--active')
-      }
 
       // document.querySelector('.modal-window__input-name').value = '';
       // document.querySelector('.modal-window__input-tel').value = '';

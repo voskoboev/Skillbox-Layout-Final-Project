@@ -8,6 +8,8 @@ require_once 'libs/phpmailer1/PHPMailerAutoload.php';
 // 	array_push($admin_email, $value);
 // }
 
+var_dump($_POST);
+
 $admin_email = 'voskoboev.dmitry@gmail.com';
 
 $form_subject = trim($_POST["form_subject"]);

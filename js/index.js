@@ -9,29 +9,9 @@ scrollToServices();
 scrollToPortfolio();
 scrollToPrices();
 scrollToTop();
-manageModalWindow();
+// manageModalWindow();
 toggleMobileMenu();
 closeMobileMenu();
-
-function sendEmail() {
-  const form = document.querySelector('.modal-window__form');
-  const btn = document.querySelector('.modal-window__submit-btn');
-
-  btn.addEventListener('click', () => {
-    let formData = new FormData(form);
-
-    fetch('mail.php', {
-      method: 'POST',
-      body: FormData
-    })
-      .then(data => {
-        console.log(data);
-        console.log('Отправлено');
-      })
-
-    form.reset();
-  });
-}
 
 function inputMask() {
   const telInput = document.querySelector('.modal-window__input-tel');

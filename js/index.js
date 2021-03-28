@@ -1,6 +1,5 @@
 'use strict';
 
-// sendEmail();
 inputMask();
 initSwiper();
 moveHeaderElementsOnLoad();
@@ -9,7 +8,7 @@ scrollToServices();
 scrollToPortfolio();
 scrollToPrices();
 scrollToTop();
-// manageModalWindow();
+manageModalWindow();
 toggleMobileMenu();
 closeMobileMenu();
 
@@ -288,7 +287,7 @@ function manageModalWindow() {
 
     btn.forEach(el => {
       el.addEventListener('click', ev => {
-        ev.preventDefault();
+        // ev.preventDefault();
 
         html.style.overflowX = 'visible';
         body.classList.add('stop-scroll');
@@ -305,7 +304,7 @@ function manageModalWindow() {
     const warning = document.querySelector('.modal-window__warning');
 
     closeBtn.addEventListener('click', ev => {
-      ev.preventDefault();
+      // ev.preventDefault();
 
       html.style.overflowX = 'hidden';
       body.classList.remove('stop-scroll');

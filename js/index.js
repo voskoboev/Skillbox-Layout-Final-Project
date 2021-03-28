@@ -56,9 +56,9 @@ function moveHeaderElementsOnLoad() {
   const decorBigDiv = document.querySelector('.header__decor-item--big-div');
   const decorTagBraces = document.querySelector('.header__decor-item--tag-braces');
 
-  if (window.innerWidth > 1024) {
+  if (window.innerWidth > 1100) {
     window.onload = () => {
-      setInterval(() => {
+      setTimeout(() => {
         decorBraces.classList.add('curly-braces--active');
         decorSmallDiv.classList.add('small-div--active');
         decorNum.classList.add('num--active');
@@ -287,7 +287,7 @@ function manageModalWindow() {
 
     btn.forEach(el => {
       el.addEventListener('click', ev => {
-        // ev.preventDefault();
+        ev.preventDefault();
 
         html.style.overflowX = 'visible';
         body.classList.add('stop-scroll');
@@ -304,7 +304,7 @@ function manageModalWindow() {
     const warning = document.querySelector('.modal-window__warning');
 
     closeBtn.addEventListener('click', ev => {
-      // ev.preventDefault();
+      ev.preventDefault();
 
       html.style.overflowX = 'hidden';
       body.classList.remove('stop-scroll');
@@ -340,7 +340,7 @@ function manageModalWindow() {
 
       let formData = new FormData(form);
 
-      fetch('mail.php', {
+      fetch('../php/mail.php', {
         method: 'POST',
         body: formData
       })
@@ -363,9 +363,6 @@ function manageModalWindow() {
             warning.classList.remove('modal-window__warning--active');
           }
         });
-
-      // document.querySelector('.modal-window__input-name').value = '';
-      // document.querySelector('.modal-window__input-tel').value = '';
     });
   }
 }

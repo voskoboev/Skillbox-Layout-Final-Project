@@ -117,6 +117,8 @@ body {
 
 .modal-window__close-btn {
   position: absolute;
+  top: 5px;
+  right: 5px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -130,8 +132,6 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  top: 5px;
-  right: 5px;
   width: 35px;
   height: 35px;
   padding: 9px;
@@ -147,8 +147,8 @@ body {
 }
 
 .modal-window__text {
-  margin-bottom: 10px;
   text-align: center;
+  margin-bottom: 10px;
 }
 
 .modal-window__input {
@@ -187,7 +187,7 @@ body {
   min-height: 200px;
   padding: 60px;
   margin: 200px auto;
-  border: 2px solid #ff4e2e;
+  border: 2px solid #ff8f5a;
   border-radius: 2%;
   background-color: #fff;
   z-index: 6000;

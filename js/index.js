@@ -345,11 +345,7 @@ function manageModalWindow() {
         body: formData
       })
         .then(data => {
-          console.log(data);
-          console.log('Отправлено');
-
           form.reset();
-
           form.style.display = 'none';
           formSuccess.classList.add('modal-window__form-success--active');
 

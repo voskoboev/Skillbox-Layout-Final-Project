@@ -127,9 +127,9 @@ body {
 
   &__close-btn {
     position: absolute;
-    @include flex(center, center, row);
     top: 5px;
     right: 5px;
+    @include flex(center, center, row);
     width: 35px;
     height: 35px;
     padding: 9px;
@@ -145,8 +145,8 @@ body {
   }
 
   &__text {
-    margin-bottom: 10px;
     text-align: center;
+    margin-bottom: 10px;
   }
 
   &__input {
@@ -185,7 +185,7 @@ body {
     min-height: 200px;
     padding: 60px;
     margin: 200px auto;
-    border: 2px solid #ff4e2e;
+    border: 2px solid $secondary-color;
     border-radius: 2%;
     background-color: #fff;
     z-index: 6000;

@@ -1,85 +1,7 @@
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  font-display: fallback;
-  src: local(''),
-    url('../fonts/roboto-v20-latin_cyrillic-regular.woff2') format('woff2'),
-    url('../fonts/roboto-v20-latin_cyrillic-regular.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 500;
-  font-display: fallback;
-  src: local(''),
-    url('../fonts/roboto-v20-latin_cyrillic-500.woff2') format('woff2'),
-    url('../fonts/roboto-v20-latin_cyrillic-500.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 700;
-  font-display: fallback;
-  src: local(''),
-    url('../fonts/roboto-v20-latin_cyrillic-700.woff2') format('woff2'),
-    url('../fonts/roboto-v20-latin_cyrillic-700.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 900;
-  font-display: fallback;
-  src: local(''),
-    url('../fonts/roboto-v20-latin_cyrillic-900.woff2') format('woff2'),
-    url('../fonts/roboto-v20-latin_cyrillic-900.woff') format('woff');
-}
-
-$primary-color: #ff2f96;
-$secondary-color: #ff8f5a;
-
-$font: Roboto,
--apple-system,
-BlinkMacSystemFont,
-'Segoe UI',
-Oxygen,
-Ubuntu,
-Cantarell,
-'Fira Sans',
-'Droid Sans',
-'Helvetica Neue',
-sans-serif;
-
-@mixin flex($jcc: start, $ai: normal, $fld: row) {
-  display: flex;
-  justify-content: $jcc;
-  align-items: $ai;
-  flex-direction: $fld;
-}
-
-html {
-  box-sizing: border-box;
-  overflow-x: hidden;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
-
-a {
-  text-decoration: none;
-}
-
-body {
-  overflow-x: hidden;
-  font-family: $font;
-  background-color: #fff;
-}
+@import "./ancillary/_fonts";
+@import "./ancillary/_vars";
+@import "./ancillary/_mixins";
+@import "./ancillary/_global";
 
 .stop-scroll {
   height: 100%;
@@ -93,7 +15,7 @@ body {
   align-items: center;
   width: 100%;
   height: 100%;
-  background-color: rgba(137, 147, 173, .5);
+  background-color: rgba(137, 147, 173, 0.5);
   z-index: 20000;
 
   &--active {
@@ -137,7 +59,7 @@ body {
     border-radius: 50%;
     outline: none;
     background-color: #fff;
-    opacity: .5;
+    opacity: 0.5;
   }
 
   &__close-btn:hover {
@@ -219,12 +141,12 @@ body {
   border: 1px solid #8993ad;
   border-radius: 50%;
   background-color: #fff;
-  opacity: .6;
+  opacity: 0.6;
   visibility: hidden;
   z-index: 1000;
   cursor: pointer;
   transform: translateY(25px);
-  transition: .3s;
+  transition: 0.3s;
 
   @media screen and (max-width: 580px) {
     & {
@@ -279,7 +201,7 @@ body {
     outline: 1px solid #ff4e2e;
     color: #ff4e2e;
     background-color: #fff;
-    transition: .1s;
+    transition: 0.1s;
   }
 
   &:active {
@@ -303,7 +225,7 @@ body {
   &:hover {
     color: #fff;
     background-color: #f82370;
-    transition: .1s;
+    transition: 0.1s;
   }
 
   &:active {
@@ -360,7 +282,11 @@ body {
   &__decor-item {
     position: absolute;
     font-weight: 700;
-    background: linear-gradient(to right bottom, $primary-color 50%, $secondary-color);
+    background: linear-gradient(
+      to right bottom,
+      $primary-color 50%,
+      $secondary-color
+    );
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -526,7 +452,7 @@ body {
   }
 
   .num--active {
-   animation: fly-num 3s ease;
+    animation: fly-num 3s ease;
   }
 
   @keyframes fly-num {
@@ -830,7 +756,11 @@ body {
     display: block;
     width: 45px;
     height: 6px;
-    background: linear-gradient(to right bottom, $primary-color 50%, $secondary-color);
+    background: linear-gradient(
+      to right bottom,
+      $primary-color 50%,
+      $secondary-color
+    );
   }
 
   @media screen and (min-width: 321px) and (max-width: 645px) {
@@ -848,14 +778,18 @@ body {
   }
 
   &__burger-menu-btn-line::before {
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
     width: 45px;
     height: 6px;
-    background: linear-gradient(to right bottom, $primary-color 50%, $secondary-color);
+    background: linear-gradient(
+      to right bottom,
+      $primary-color 50%,
+      $secondary-color
+    );
     transform: translateY(13px);
-    transition: .1s;
+    transition: 0.1s;
   }
 
   @media screen and (min-width: 321px) and (max-width: 645px) {
@@ -875,14 +809,18 @@ body {
   }
 
   &__burger-menu-btn-line::after {
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
     width: 45px;
     height: 6px;
-    background: linear-gradient(to right bottom, $primary-color 50%, $secondary-color);
+    background: linear-gradient(
+      to right bottom,
+      $primary-color 50%,
+      $secondary-color
+    );
     transform: translateY(-13px);
-    transition: .1s;
+    transition: 0.1s;
   }
 
   @media screen and (min-width: 321px) and (max-width: 645px) {
@@ -907,12 +845,12 @@ body {
 
   &__burger-menu-btn-line--active::before {
     transform: rotate(45deg);
-    transition: .1s;
+    transition: 0.1s;
   }
 
   &__burger-menu-btn-line--active::after {
     transform: rotate(-45deg);
-    transition: .1s;
+    transition: 0.1s;
   }
 
   &__menu-item {
@@ -1054,7 +992,7 @@ body {
   }
 
   &__mobile-call-btn::before {
-    content: '';
+    content: "";
     position: absolute;
     left: 1px;
     top: 1px;
@@ -1115,7 +1053,7 @@ body {
 
   @media screen and (min-width: 321px) and (max-width: 900px) {
     &__lower-left-side {
-      padding-top: 100px
+      padding-top: 100px;
     }
   }
 
@@ -1510,7 +1448,7 @@ body {
 
   @media screen and (max-width: 320px) {
     &__img--monitor:before {
-      content: '';
+      content: "";
       width: 63px;
       height: 58px;
       background-image: url(../images/monitor-compressed.png);
@@ -1530,7 +1468,7 @@ body {
     }
 
     &__img--screens:before {
-      content: '';
+      content: "";
       width: 63px;
       height: 58px;
       background-image: url(../images/screens-compressed.png);
@@ -1542,12 +1480,11 @@ body {
   &__img--programming:before {
     content: url(../images/programming-compressed.png);
     background-repeat: no-repeat;
-
   }
 
   @media screen and (max-width: 320px) {
     &__img--programming:before {
-      content: '';
+      content: "";
       width: 63px;
       height: 58px;
       background-image: url(../images/programming-compressed.png);
@@ -1559,7 +1496,6 @@ body {
   &__img--development:before {
     content: url(../images/development-compressed.png);
     background-repeat: no-repeat;
-
   }
 
   @media screen and (max-width: 320px) {
@@ -1568,7 +1504,7 @@ body {
     }
 
     &__img--development:before {
-      content: '';
+      content: "";
       width: 63px;
       height: 58px;
       background-image: url(../images/development-compressed.png);
@@ -1761,7 +1697,7 @@ body {
 
   .swiper-button {
     border-radius: 50%;
-    box-shadow: 0 0 20px rgba(0, 0, 0, .08);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
     z-index: 10000;
   }
 
@@ -1957,7 +1893,7 @@ body {
     font-weight: 400;
     color: #fff;
     line-height: 30px;
-    letter-spacing: .1px;
+    letter-spacing: 0.1px;
   }
 
   @media screen and (max-width: 320px) {
@@ -2064,7 +2000,6 @@ body {
 }
 
 .footer {
-
   @media screen and (min-width: 1024px) and (max-width: 1230px) {
     &__container {
       padding-left: 40px;
@@ -2187,7 +2122,6 @@ body {
     font-size: 25px;
     font-weight: 400;
     color: #000;
-
   }
 
   @media screen and (max-width: 570px) {
@@ -2268,7 +2202,7 @@ body {
   }
 
   &__socials-link:hover {
-    opacity: .7;
+    opacity: 0.7;
   }
 
   &__socials-link--vk {

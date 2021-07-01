@@ -1,0 +1,51 @@
+.scroll-up-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 90px;
+  height: 90px;
+  border: 1px solid #8993ad;
+  border-radius: 50%;
+  background-color: #fff;
+  opacity: 0.6;
+  visibility: hidden;
+  z-index: 1000;
+  cursor: pointer;
+  transform: translateY(25px);
+  transition: 0.3s;
+
+  @media screen and (max-width: 580px) {
+    display: none;
+  }
+
+  &:hover {
+    background-color: #ebebeb;
+  }
+
+  &--active {
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  &-first-line {
+    position: absolute;
+    top: 40px;
+    left: 15px;
+    width: 40px;
+    height: 5px;
+    border-radius: 15%;
+    background-color: #8993ad;
+    transform: rotate(300deg);
+  }
+
+  &-second-line {
+    position: absolute;
+    top: 40px;
+    right: 15px;
+    width: 40px;
+    height: 5px;
+    border-radius: 15%;
+    background-color: #8993ad;
+    transform: rotate(60deg);
+  }
+}

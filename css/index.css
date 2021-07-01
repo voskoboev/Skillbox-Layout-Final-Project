@@ -53,9 +53,9 @@ body {
   background-color: #fff;
 }
 
-.stop-scroll {
-  height: 100%;
-  overflow: hidden;
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
 }
 
 .modal-window {
@@ -211,65 +211,6 @@ body {
   color: #8993ad;
 }
 
-.scroll-up-btn {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  width: 90px;
-  height: 90px;
-  border: 1px solid #8993ad;
-  border-radius: 50%;
-  background-color: #fff;
-  opacity: 0.6;
-  visibility: hidden;
-  z-index: 1000;
-  cursor: pointer;
-  -webkit-transform: translateY(25px);
-          transform: translateY(25px);
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-
-@media screen and (max-width: 580px) {
-  .scroll-up-btn {
-    display: none;
-  }
-}
-
-.scroll-up-btn:hover {
-  background-color: #ebebeb;
-}
-
-.scroll-up-btn--active {
-  visibility: visible;
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
-}
-
-.scroll-up-btn-first-line {
-  position: absolute;
-  top: 40px;
-  left: 15px;
-  width: 40px;
-  height: 5px;
-  border-radius: 15%;
-  background-color: #8993ad;
-  -webkit-transform: rotate(300deg);
-          transform: rotate(300deg);
-}
-
-.scroll-up-btn-second-line {
-  position: absolute;
-  top: 40px;
-  right: 15px;
-  width: 40px;
-  height: 5px;
-  border-radius: 15%;
-  background-color: #8993ad;
-  -webkit-transform: rotate(60deg);
-          transform: rotate(60deg);
-}
-
 .button-primary {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -331,9 +272,68 @@ body {
   background-color: #f75678;
 }
 
-.container {
-  max-width: 1170px;
-  margin: 0 auto;
+.scroll-up-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 90px;
+  height: 90px;
+  border: 1px solid #8993ad;
+  border-radius: 50%;
+  background-color: #fff;
+  opacity: 0.6;
+  visibility: hidden;
+  z-index: 1000;
+  cursor: pointer;
+  -webkit-transform: translateY(25px);
+          transform: translateY(25px);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+@media screen and (max-width: 580px) {
+  .scroll-up-btn {
+    display: none;
+  }
+}
+
+.scroll-up-btn:hover {
+  background-color: #ebebeb;
+}
+
+.scroll-up-btn--active {
+  visibility: visible;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.scroll-up-btn-first-line {
+  position: absolute;
+  top: 40px;
+  left: 15px;
+  width: 40px;
+  height: 5px;
+  border-radius: 15%;
+  background-color: #8993ad;
+  -webkit-transform: rotate(300deg);
+          transform: rotate(300deg);
+}
+
+.scroll-up-btn-second-line {
+  position: absolute;
+  top: 40px;
+  right: 15px;
+  width: 40px;
+  height: 5px;
+  border-radius: 15%;
+  background-color: #8993ad;
+  -webkit-transform: rotate(60deg);
+          transform: rotate(60deg);
+}
+
+.stop-scroll {
+  height: 100%;
+  overflow: hidden;
 }
 
 .header {
@@ -487,7 +487,7 @@ body {
 }
 
 @media screen and (min-width: 646px) and (max-width: 980px) {
-  .header__decor-item--small-div {
+  .header__decor-item--small-div__decor-item--small-div {
     display: none;
   }
 }
@@ -814,9 +814,9 @@ body {
 
 @media screen and (max-width: 1024px) {
   .header__decor-item--tag-braces-mobile {
+    display: block;
     top: 235px;
     left: 423px;
-    display: block;
     font-size: 45px;
     background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #ff2f96), to(#ff8f5a));
     background: linear-gradient(#ff2f96 50%, #ff8f5a);
@@ -987,9 +987,10 @@ body {
     z-index: 10000;
     background-color: #fff;
   }
-  .header__nav--active {
-    display: block;
-  }
+}
+
+.header__nav--active {
+  display: block;
 }
 
 .header__menu {
@@ -1319,7 +1320,7 @@ body {
   top: 1px;
   width: 24px;
   height: 24px;
-  background-image: url(../images/mobile-phone-icon.png);
+  background-image: url("../images/mobile-phone-icon.png");
   background-repeat: no-repeat;
   background-color: #fbfbfb;
   background-position: center center;
@@ -1730,12 +1731,6 @@ body {
           flex-direction: column;
 }
 
-@media screen and (min-width: 321px) and (max-width: 759px) {
-  .services__feature:not(:last-child) {
-    margin-bottom: 25px;
-  }
-}
-
 @media screen and (max-width: 320px) {
   .services__feature {
     width: 100vw;
@@ -1747,6 +1742,12 @@ body {
 
 .services__feature:not(:last-child) {
   margin-right: 42px;
+}
+
+@media screen and (min-width: 321px) and (max-width: 759px) {
+  .services__feature:not(:last-child) {
+    margin-bottom: 25px;
+  }
 }
 
 @media screen and (min-width: 760px) and (max-width: 1024px) {
@@ -1805,24 +1806,24 @@ body {
   }
 }
 
-.services__img--monitor:before {
-  content: url(../images/monitor-compressed.png);
+.services__img--monitor::before {
+  content: url("../images/monitor-compressed.png");
   background-repeat: no-repeat;
 }
 
 @media screen and (max-width: 320px) {
-  .services__img--monitor:before {
+  .services__img--monitor::before {
     content: "";
     width: 63px;
     height: 58px;
-    background-image: url(../images/monitor-compressed.png);
+    background-image: url("../images/monitor-compressed.png");
     background-position: center center;
     background-size: contain;
   }
 }
 
 .services__img--screens:before {
-  content: url(../images/screens-compressed.png);
+  content: url("../images/screens-compressed.png");
   background-repeat: no-repeat;
 }
 
@@ -1834,14 +1835,14 @@ body {
     content: "";
     width: 63px;
     height: 58px;
-    background-image: url(../images/screens-compressed.png);
+    background-image: url("../images/screens-compressed.png");
     background-position: center center;
     background-size: contain;
   }
 }
 
 .services__img--programming:before {
-  content: url(../images/programming-compressed.png);
+  content: url("../images/programming-compressed.png");
   background-repeat: no-repeat;
 }
 
@@ -1850,14 +1851,14 @@ body {
     content: "";
     width: 63px;
     height: 58px;
-    background-image: url(../images/programming-compressed.png);
+    background-image: url("../images/programming-compressed.png");
     background-position: center center;
     background-size: contain;
   }
 }
 
 .services__img--development:before {
-  content: url(../images/development-compressed.png);
+  content: url("../images/development-compressed.png");
   background-repeat: no-repeat;
 }
 
@@ -1869,7 +1870,7 @@ body {
     content: "";
     width: 63px;
     height: 58px;
-    background-image: url(../images/development-compressed.png);
+    background-image: url("../images/development-compressed.png");
     background-position: center center;
     background-size: contain;
   }
@@ -1896,6 +1897,9 @@ body {
     font-size: 16px;
     line-height: 24px;
   }
+}
+
+@media screen and (max-width: 645px) {
   .services__feature-title:nth-child(2) {
     width: 250px;
   }
@@ -2026,6 +2030,7 @@ body {
   font-size: 20px;
   font-weight: 500;
   color: #8993ad;
+  cursor: default;
 }
 
 @media screen and (max-width: 1024px) {
@@ -2079,7 +2084,7 @@ body {
 }
 
 .portfolio .swiper-button-prev::before {
-  content: url(../images/arrow-compressed.png);
+  content: url("../images/arrow-compressed.png");
 }
 
 .portfolio .swiper-button-prev::after {
@@ -2098,7 +2103,7 @@ body {
 }
 
 .portfolio .swiper-button-next::before {
-  content: url(../images/arrow-compressed.png);
+  content: url("../images/arrow-compressed.png");
 }
 
 .portfolio .swiper-button-next::after {
@@ -2447,16 +2452,6 @@ body {
 
 @media screen and (max-width: 320px) {
   .footer__menu-item {
-    font-size: 15px;
-  }
-}
-
-.footer__menu-item:not(:last-child) {
-  margin-bottom: 15px;
-}
-
-@media screen and (max-width: 320px) {
-  .footer__menu-item {
     font-size: 16px;
   }
 }
@@ -2467,6 +2462,10 @@ body {
 
 .footer__menu-item:active {
   color: #000;
+}
+
+.footer__menu-item:not(:last-child) {
+  margin-bottom: 15px;
 }
 
 .footer__contacts {
@@ -2572,14 +2571,16 @@ body {
     color: #fff;
     background-color: #ff4e2e;
   }
-  .footer__submit-btn:hover {
-    color: #fff;
-    background-color: #ff4e2e;
-  }
-  .footer__submit-btn:active {
-    color: #ff4e2e;
-    background-color: #fff;
-  }
+}
+
+.footer__submit-btn:hover {
+  background-color: #ff4e2e;
+  color: #fff;
+}
+
+.footer__submit-btn:active {
+  color: #ff4e2e;
+  background-color: #fff;
 }
 
 .footer__socials-items-container {
@@ -2597,7 +2598,7 @@ body {
 
 .footer__socials-link {
   display: inline-block;
-  background-image: url(../images/social-spritesheet-compressed.png);
+  background-image: url("../images/social-spritesheet-compressed.png");
   background-repeat: no-repeat;
 }
 

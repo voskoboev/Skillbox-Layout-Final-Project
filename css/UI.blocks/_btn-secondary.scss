@@ -1,0 +1,22 @@
+.button-secondary {
+  display: block;
+  padding: 10px;
+  width: 208px;
+  min-height: 46px;
+  outline: none;
+  border: 1px solid #f82370;
+  font-family: inherit;
+  font-size: 16px;
+  color: #f82370;
+  background-color: #fff;
+
+  &:hover {
+    color: #fff;
+    background-color: #f82370;
+    transition: 0.1s;
+  }
+
+  &:active {
+    background-color: #f75678;
+  }
+}

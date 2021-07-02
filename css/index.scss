@@ -31,8 +31,7 @@
 
   &__container {
     @media screen and (min-width: 1025px) and (max-width: 1250px) {
-      padding-right: 40px;
-      padding-left: 40px;
+      @include pl-pr(40px);
     }
 
     @media screen and (max-width: 1024px) {
@@ -52,9 +51,8 @@
       $primary-color 50%,
       $secondary-color
     );
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+
+    @include bg-clip-text;
   }
 
   &__decor-item--curly-braces {
@@ -107,10 +105,9 @@
     left: 410px;
     font-size: 30px;
     background: linear-gradient($primary-color 50%, $secondary-color);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
     transform: rotate(345deg);
+
+    @include bg-clip-text;
 
     @media screen and (max-width: 1024px) {
       top: 150px;
@@ -261,10 +258,9 @@
     left: 0px;
     font-size: 40px;
     background: linear-gradient($primary-color 50%, $secondary-color);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
     transform: rotate(340deg);
+
+    @include bg-clip-text;
 
     @media screen and (max-width: 1024px) {
       left: 360px;
@@ -315,10 +311,9 @@
       left: 423px;
       font-size: 45px;
       background: linear-gradient($primary-color 50%, $secondary-color);
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
       transform: rotate(15deg);
+
+      @include bg-clip-text;
     }
 
     @media screen and (min-width: 646px) and (max-width: 900px) {
@@ -345,42 +340,42 @@
   }
 
   &__upper {
-    position: relative;
     @include flex(start, baseline, row);
+
+    position: relative;
     padding-top: 30px;
     padding-bottom: 45px;
 
     @media screen and (min-width: 901px) and (max-width: 1024px) {
       @include flex(space-between, center, row);
+      @include pl-pr(40px);
+
       width: 100vw;
       padding-top: 30px;
-      padding-left: 40px;
-      padding-right: 40px;
     }
 
     @media screen and (min-width: 471px) and (max-width: 900px) {
       @include flex(space-between, baseline, row);
+      @include pl-pr(40px);
+
       width: 100vw;
       padding-top: 30px;
-      padding-left: 40px;
-      padding-right: 40px;
     }
 
     @media screen and (min-width: 321px) and (max-width: 470px) {
       @include flex(space-between, baseline, row);
+      @include pl-pr(40px);
+
       width: 100vw;
       padding-top: 30px;
-      padding-left: 40px;
-      padding-right: 40px;
     }
 
     @media screen and (max-width: 320px) {
+      @include pl-pr(20px);
       align-items: center;
       justify-content: space-between;
       width: auto;
       padding-top: 25px;
-      padding-left: 20px;
-      padding-right: 20px;
     }
   }
 
@@ -664,7 +659,7 @@
       top: 1px;
       width: 24px;
       height: 24px;
-      background-image: url('../images/mobile-phone-icon.png');
+      background-image: url("../images/mobile-phone-icon.png");
       background-repeat: no-repeat;
       background-color: #fbfbfb;
       background-position: center center;
@@ -761,8 +756,8 @@
     }
 
     @media screen and (min-width: 321px) and (max-width: 550px) {
-      padding-right: 30px;
-      padding-left: 30px;
+      @include pl-pr(30px);
+
       text-align: center;
       font-size: 17px;
     }
@@ -908,8 +903,7 @@
 
   @media screen and (min-width: 1024px) and (max-width: 1250px) {
     &__container {
-      padding-left: 40px;
-      padding-right: 40px;
+      @include pl-pr(40px);
     }
   }
 
@@ -935,23 +929,23 @@
     justify-content: space-between;
 
     @media screen and (min-width: 1024px) and (max-width: 1024px) {
+      @include pl-pr(140px);
+
       flex-wrap: wrap;
-      padding-left: 140px;
-      padding-right: 140px;
     }
 
     @media screen and (min-width: 321px) and (max-width: 1023px) {
+      @include pl-pr(100px);
+
       justify-content: center;
       flex-wrap: wrap;
-      padding-left: 100px;
-      padding-right: 100px;
       margin: 0;
     }
 
     @media screen and (max-width: 320px) {
+      @include pl-pr(0);
+
       flex-wrap: wrap;
-      padding-left: 0;
-      padding-right: 0;
       margin: 0;
     }
   }
@@ -1166,18 +1160,15 @@
 
     @media screen and (min-width: 1024px) and (max-width: 1280px) {
       text-align: center;
-      padding-right: 40px;
-      padding-left: 40px;
+      @include pl-pr(40px);
     }
 
     @media screen and (max-width: 1024px) {
-      padding-right: 40px;
-      padding-left: 40px;
+      @include pl-pr(40px);
     }
 
     @media screen and (max-width: 320px) {
-      padding-right: 19px;
-      padding-left: 19px;
+      @include pl-pr(20px);
     }
   }
 
@@ -1384,17 +1375,15 @@
     padding-left: 115px;
 
     @media screen and (min-width: 1024px) and (max-width: 1150px) {
-      padding-left: 40px;
-      padding-right: 40px;
+      @include pl-pr(40px);
     }
 
     @media screen and (max-width: 1024px) {
-      padding-left: 40px;
-      padding-right: 40px;
+      @include pl-pr(40px);
     }
 
     @media screen and (max-width: 320px) {
-      padding-left: 19px;
+      padding-left: 20px;
       padding-right: 0;
     }
   }
@@ -1518,13 +1507,11 @@
 .footer {
   &__container {
     @media screen and (min-width: 1024px) and (max-width: 1230px) {
-      padding-left: 40px;
-      padding-right: 40px;
+      @include pl-pr(40px);
     }
 
     @media screen and (min-width: 321px) and (max-width: 1023px) {
-      padding-left: 20px;
-      padding-right: 20px;
+      @include pl-pr(20px);
     }
   }
 
@@ -1593,18 +1580,16 @@
     width: 18px;
     height: 18px;
     background: linear-gradient(180deg, $primary-color, $secondary-color);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+
+    @include bg-clip-text;
   }
 
   &__envelope-icon {
     width: 23px;
     height: 15px;
     background: linear-gradient(180deg, $primary-color, $secondary-color);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    
+    @include bg-clip-text;
   }
 
   &__tel-item {

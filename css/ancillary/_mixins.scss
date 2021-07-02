@@ -4,3 +4,16 @@
   align-items: $ai;
   flex-direction: $fld;
 }
+
+@mixin pl-pr($val) {
+  padding: {
+    left: $val;
+    right: $val;
+  }
+}
+
+@mixin bg-clip-text {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

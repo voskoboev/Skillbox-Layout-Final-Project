@@ -57,7 +57,7 @@ function moveHeaderElementsOnLoad() {
     decorBigDiv = document.querySelector('.header__decor-item--big-div'),
     decorTagBraces = document.querySelector('.header__decor-item--tag-braces')
 
-  const activateItems = () => {
+  const activateElements = () => {
     setTimeout(() => {
       decorBraces.classList.add('curly-braces--active')
       decorSmallDiv.classList.add('small-div--active')
@@ -68,11 +68,11 @@ function moveHeaderElementsOnLoad() {
   }
 
   if (window.innerWidth > 1100) {
-    window.addEventListener('load', activateItems)
+    window.addEventListener('load', activateElements)
   }
 
   if (window.innerWidth <= 1100) {
-    window.removeEventListener('load', activateItems)
+    window.removeEventListener('load', activateElements)
   }
 }
 
@@ -81,24 +81,24 @@ function moveOfferElementsOnHover() {
     offer = document.querySelector('.offer'),
     offerElements = document.querySelectorAll('.offer__decor-item')
 
-  const activateItems = () => {
+  const activateElements = () => {
     offerElements.forEach(el => {
       el.classList.add('offer__decor-item--active')
     })
   }
 
-  const inactivateItems = () => {
+  const inactivateElements = () => {
     offerElements.forEach(el => {
       el.classList.remove('offer__decor-item--active')
     })
   }
 
-  offer.addEventListener('mouseenter', activateItems)
-  offer.addEventListener('mouseleave', inactivateItems)
+  offer.addEventListener('mouseenter', activateElements)
+  offer.addEventListener('mouseleave', inactivateElements)
 
   if (window.innerWidth < 1200) {
-    offer.removeEventListener('mouseenter', activateItems)
-    offer.removeEventListener('mouseleave', inactivateItems)
+    offer.removeEventListener('mouseenter', activateElements)
+    offer.removeEventListener('mouseleave', inactivateElements)
   }
 }
 
@@ -116,49 +116,6 @@ function scrollToServices() {
   })
   // }
 
-  // if (window.innerWidth > 901 && window.innerWidth <= 1024) {
-  //   servicesMenuItems.forEach(el => {
-  //     el.addEventListener('click', () => {
-  //       window.scrollTo({
-  //         top: 800,
-  //         behavior: 'smooth'
-  //       })
-  //     })
-  //   })
-  // }
-
-  // if (window.innerWidth > 646 && window.innerWidth <= 900) {
-  //   servicesMenuItems.forEach(el => {
-  //     el.addEventListener('click', () => {
-  //       window.scrollTo({
-  //         top: 500,
-  //         behavior: 'smooth'
-  //       });
-  //     });
-  //   });
-  // }
-
-  // if (window.innerWidth > 320 && window.innerWidth <= 645) {
-  //   servicesMenuItems.forEach(el => {
-  //     el.addEventListener('click', () => {
-  //       window.scrollTo({
-  //         top: 780,
-  //         behavior: 'smooth'
-  //       });
-  //     });
-  //   });
-  // }
-
-  // if (window.innerWidth <= 320) {
-  //   servicesMenuItems.forEach(el => {
-  //     el.addEventListener('click', () => {
-  //       window.scrollTo({
-  //         top: 670,
-  //         behavior: 'smooth'
-  //       });
-  //     });
-  //   });
-  // }
 }
 
 function scrollToPortfolio() {
@@ -175,60 +132,6 @@ function scrollToPortfolio() {
   })
   // }
 
-  // if (window.innerWidth > 901 && window.innerWidth <= 1024) {
-  //   portfolioMenuItem.forEach(el => {
-  //     el.addEventListener('click', () => {
-  //       window.scrollTo({
-  //         top: 1680,
-  //         behavior: 'smooth'
-  //       });
-  //     });
-  //   });
-  // }
-
-  // if (window.innerWidth > 760 && window.innerWidth <= 900) {
-  //   portfolioMenuItem.forEach(el => {
-  //     el.addEventListener('click', () => {
-  //       window.scrollTo({
-  //         top: 1400,
-  //         behavior: 'smooth'
-  //       });
-  //     });
-  //   });
-  // }
-
-  // if (window.innerWidth > 426 && window.innerWidth <= 759) {
-  //   portfolioMenuItem.forEach(el => {
-  //     el.addEventListener('click', () => {
-  //       window.scrollTo({
-  //         top: 1700,
-  //         behavior: 'smooth'
-  //       });
-  //     });
-  //   });
-  // }
-
-  // if (window.innerWidth > 320 && window.innerWidth <= 425) {
-  //   portfolioMenuItem.forEach(el => {
-  //     el.addEventListener('click', () => {
-  //       window.scrollTo({
-  //         top: 1870,
-  //         behavior: 'smooth'
-  //       });
-  //     });
-  //   });
-  // }
-
-  // if (window.innerWidth <= 320) {
-  //   portfolioMenuItem.forEach(el => {
-  //     el.addEventListener('click', () => {
-  //       window.scrollTo({
-  //         top: 1550,
-  //         behavior: 'smooth'
-  //       });
-  //     });
-  //   });
-  // }
 }
 
 function scrollToPrices() {
@@ -245,27 +148,6 @@ function scrollToPrices() {
   })
   // }
 
-  // if (window.innerWidth > 320 && window.innerWidth < 425) {
-  //   servicesMenuItem.forEach(el => {
-  //     el.addEventListener('click', () => {
-  //       window.scrollTo({
-  //         top: 2600,
-  //         behavior: 'smooth'
-  //       });
-  //     });
-  //   });
-  // }
-
-  // if (window.innerWidth <= 320) {
-  //   servicesMenuItem.forEach(el => {
-  //     el.addEventListener('click', () => {
-  //       window.scrollTo({
-  //         top: 3000,
-  //         behavior: 'smooth'
-  //       });
-  //     });
-  //   });
-  // }
 }
 
 function scrollToTop() {
@@ -292,11 +174,7 @@ function scrollToTop() {
 }
 
 function manageModalWindow() {
-  showModalWindow()
-  closeModalWindow()
-  submitFormAndShowSuccessMessage()
-
-  function showModalWindow() {
+  const showModalWindow = () => {
     const
       html = document.querySelector('html'),
       body = document.querySelector('body'),
@@ -314,13 +192,21 @@ function manageModalWindow() {
     })
   }
 
-  function closeModalWindow() {
+  showModalWindow()
+
+  const closeModalWindow = () => {
     const
       html = document.querySelector('html'),
       body = document.querySelector('body'),
       modalWindow = document.querySelector('.modal-window'),
+      inputName = document.querySelector('.modal-window__input-name'),
+      inputTel = document.querySelector('.modal-window__input-tel'),
       closeBtn = document.querySelector('.modal-window__close-btn'),
       warning = document.querySelector('.modal-window__warning')
+
+    const clearInputValues = (input) => {
+      input.value = ''
+    }
 
     closeBtn.addEventListener('click', ev => {
       ev.preventDefault()
@@ -330,15 +216,14 @@ function manageModalWindow() {
       modalWindow.classList.remove('modal-window--active')
       warning.classList.remove('modal-window__warning--active')
 
-      document.querySelector('.modal-window__input-name').value = ''
-      document.querySelector('.modal-window__input-tel').value = ''
+      clearInputValues(inputName)
+      clearInputValues(inputTel)
     })
   }
 
+  closeModalWindow()
 
-
-
-  function submitFormAndShowSuccessMessage() {
+  const submitFormAndShowSuccessMessage = () => {
     const
       body = document.querySelector('body'),
       modalWindow = document.querySelector('.modal-window'),
@@ -347,11 +232,12 @@ function manageModalWindow() {
       formSuccess = document.querySelector('.modal-window__form-success')
 
     submitBtn.addEventListener('click', () => {
-      const inputNameValue = document.querySelector('.modal-window__input-name').value
-      const inputTelValue = document.querySelector('.modal-window__input-tel').value
-      const warning = document.querySelector('.modal-window__warning')
+      const
+        inputNameValue = document.querySelector('.modal-window__input-name').value,
+        inputTelValue = document.querySelector('.modal-window__input-tel').value,
+        warning = document.querySelector('.modal-window__warning')
 
-      if (inputNameValue === '' || inputTelValue === '') {
+      if (!inputNameValue || !inputTelValue) {
         if (warning.classList.contains('modal-window__warning--active')) {
           return
         } else {
@@ -361,7 +247,7 @@ function manageModalWindow() {
         return
       }
 
-      let formData = new FormData(form)
+      const formData = new FormData(form)
 
       fetch('../php/mail.php', {
         method: 'POST',
@@ -384,6 +270,8 @@ function manageModalWindow() {
         })
     })
   }
+
+  submitFormAndShowSuccessMessage()
 }
 
 function toggleMobileMenu() {

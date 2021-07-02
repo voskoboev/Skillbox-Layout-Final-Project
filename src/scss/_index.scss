@@ -1,13 +1,3 @@
-@import "./ancillary/_fonts";
-@import "./ancillary/_vars";
-@import "./ancillary/_mixins";
-@import "./ancillary/_global";
-
-@import "./UI.blocks/_modal";
-@import "./UI.blocks/_btn-primary";
-@import "./UI.blocks/_btn-secondary";
-@import "./UI.blocks/_btn-scroll-to-top.scss";
-
 .stop-scroll {
   height: 100%;
   overflow: hidden;
@@ -71,8 +61,8 @@
     }
 
     @media screen and (max-width: 320px) {
-      left: 50px;
       top: 105px;
+      left: 50px;
       font-size: 22px;
     }
   }
@@ -83,20 +73,20 @@
 
   @keyframes fly-curly-braces {
     0% {
+      opacity: 1;
       transform: translate(0, 0);
       transform: rotate(30deg);
-      opacity: 1;
     }
 
     50% {
-      transform: translate(-300px, -300px);
       opacity: 0;
+      transform: translate(-300px, -300px);
     }
 
     100% {
+      opacity: 1;
       transform: translate(0, 0);
       transform: rotate(30deg);
-      opacity: 1;
     }
   }
 
@@ -146,32 +136,32 @@
 
   @keyframes fly-small-div {
     0% {
+      opacity: 1;
       transform: translate(0, 0);
       transform: rotate(345deg);
-      opacity: 1;
     }
 
     50% {
-      transform: translate(0, -300px);
       opacity: 0;
+      transform: translate(0, -300px);
     }
 
     100% {
+      opacity: 1;
       transform: translate(0, 0);
       transform: rotate(345deg);
-      opacity: 1;
     }
   }
 
   &__decor-item--num {
-    left: -130px;
     top: 365px;
+    left: -130px;
     font-size: 55px;
     transform: rotate(15deg);
 
     @media screen and (min-width: 901px) and (max-width: 1024px) {
-      left: 60px;
       top: 635px;
+      left: 60px;
     }
 
     @media screen and (min-width: 646px) and (max-width: 900px) {
@@ -179,14 +169,14 @@
     }
 
     @media screen and (min-width: 321px) and (max-width: 645px) {
-      left: 50px;
       top: 400px;
+      left: 50px;
       font-size: 40px;
     }
 
     @media screen and (max-width: 320px) {
-      left: 37px;
       top: 205px;
+      left: 37px;
       font-size: 28px;
     }
   }
@@ -197,20 +187,20 @@
 
   @keyframes fly-num {
     0% {
+      opacity: 1;
       transform: translate(0, 0);
       transform: rotate(15deg);
-      opacity: 1;
     }
 
     50% {
-      transform: translate(-300px, 0);
       opacity: 0;
+      transform: translate(-300px, 0);
     }
 
     100% {
+      opacity: 1;
       transform: translate(0, 0);
       transform: rotate(15deg);
-      opacity: 1;
     }
   }
 
@@ -236,20 +226,20 @@
 
   @keyframes fly-big-div {
     0% {
+      opacity: 1;
       transform: translate(0, 0);
       transform: rotate(20deg);
-      opacity: 1;
     }
 
     50% {
-      transform: translate(0, 300px);
       opacity: 0;
+      transform: translate(0, 300px);
     }
 
     100% {
+      opacity: 1;
       transform: translate(0, 0);
       transform: rotate(20deg);
-      opacity: 1;
     }
   }
 
@@ -263,8 +253,8 @@
     @include bg-clip-text;
 
     @media screen and (max-width: 1024px) {
-      left: 360px;
       top: 585px;
+      left: 360px;
     }
 
     @media screen and (min-width: 321px) and (max-width: 940px) {
@@ -272,8 +262,8 @@
     }
 
     @media screen and (max-width: 320px) {
-      left: 175px;
       top: 85px;
+      left: 175px;
       font-size: 16px;
       transform: rotate(330deg);
     }
@@ -285,20 +275,20 @@
 
   @keyframes fly-tag-braces {
     0% {
+      opacity: 1;
       transform: translate(0, 0);
       transform: rotate(340deg);
-      opacity: 1;
     }
 
     50% {
-      transform: translate(0, 150px);
       opacity: 0;
+      transform: translate(0, 150px);
     }
 
     100% {
+      opacity: 1;
       transform: translate(0, 0);
       transform: rotate(340deg);
-      opacity: 1;
     }
   }
 
@@ -306,9 +296,9 @@
     display: none;
 
     @media screen and (max-width: 1024px) {
-      display: block;
       top: 235px;
       left: 423px;
+      display: block;
       font-size: 45px;
       background: linear-gradient($primary-color 50%, $secondary-color);
       transform: rotate(15deg);
@@ -372,6 +362,7 @@
 
     @media screen and (max-width: 320px) {
       @include pl-pr(20px);
+
       align-items: center;
       justify-content: space-between;
       width: auto;
@@ -387,6 +378,7 @@
       position: absolute;
       top: 0;
       left: 0;
+      z-index: 10000;
       display: none;
       flex-direction: column;
       align-items: center;
@@ -394,7 +386,6 @@
       height: 100vh;
       font-size: 54px;
       color: #1f1f24;
-      z-index: 10000;
       background-color: #fff;
     }
   }
@@ -408,22 +399,23 @@
 
     @media screen and (max-width: 1024px) {
       @include flex(center, center, column);
+
       padding-top: 100px;
     }
   }
 
   &__burger-menu-btn {
     position: relative;
-    left: 0;
     top: -5px;
+    left: 0;
+    z-index: 15000;
+    display: none;
     width: 45px;
     height: 45px;
     padding: 0;
+    background-color: #fbfbfb;
     border: none;
     outline: none;
-    background-color: #fbfbfb;
-    z-index: 15000;
-    display: none;
 
     @media screen and (max-width: 1024px) {
       display: block;
@@ -474,18 +466,18 @@
   }
 
   &__burger-menu-btn-line::before {
-    content: "";
     position: absolute;
     left: 0;
     width: 45px;
     height: 6px;
+    content: '';
     background: linear-gradient(
       to right bottom,
       $primary-color 50%,
       $secondary-color
     );
-    transform: translateY(13px);
     transition: 0.1s;
+    transform: translateY(13px);
 
     @media screen and (min-width: 321px) and (max-width: 645px) {
       width: 35px;
@@ -501,18 +493,18 @@
   }
 
   &__burger-menu-btn-line::after {
-    content: "";
     position: absolute;
     left: 0;
     width: 45px;
     height: 6px;
+    content: '';
     background: linear-gradient(
       to right bottom,
       $primary-color 50%,
       $secondary-color
     );
-    transform: translateY(-13px);
     transition: 0.1s;
+    transform: translateY(-13px);
 
     @media screen and (min-width: 321px) and (max-width: 645px) {
       width: 35px;
@@ -532,22 +524,22 @@
   }
 
   &__burger-menu-btn-line--active::before {
-    transform: rotate(45deg);
     transition: 0.1s;
+    transform: rotate(45deg);
   }
 
   &__burger-menu-btn-line--active::after {
-    transform: rotate(-45deg);
     transition: 0.1s;
+    transform: rotate(-45deg);
   }
 
   &__menu-item {
     height: 20px;
     padding-bottom: 5px;
     margin-right: 27px;
-    border-bottom: 1px solid transparent;
     font-size: 17px;
     color: #1f1f24;
+    border-bottom: 1px solid transparent;
     cursor: pointer;
 
     @media screen and (max-width: 1024px) {
@@ -555,9 +547,9 @@
       padding-bottom: 100px;
       margin-right: 0;
       margin-bottom: 50px;
-      border-bottom: 1px solid #8993ad;
-      text-align: center;
       font-size: 54px;
+      text-align: center;
+      border-bottom: 1px solid #8993ad;
     }
 
     @media screen and (max-width: 425px) {
@@ -568,8 +560,8 @@
     }
 
     &:hover {
-      border-bottom: 1px solid #fc557c;
       color: #fc557c;
+      border-bottom: 1px solid #fc557c;
     }
   }
 
@@ -653,13 +645,13 @@
     }
 
     &::before {
-      content: "";
+      content: '';
       position: absolute;
       left: 1px;
       top: 1px;
       width: 24px;
       height: 24px;
-      background-image: url("../images/mobile-phone-icon.png");
+      background-image: url('../images/mobile-phone-icon.png');
       background-repeat: no-repeat;
       background-color: #fbfbfb;
       background-position: center center;
@@ -1025,16 +1017,16 @@
   }
 
   &__img--monitor::before {
-    content: url("../images/monitor-compressed.png");
+    content: url('../images/monitor-compressed.png');
     background-repeat: no-repeat;
 
     @media screen and (max-width: 320px) {
       & {
         // before?
-        content: "";
+        content: '';
         width: 63px;
         height: 58px;
-        background-image: url("../images/monitor-compressed.png");
+        background-image: url('../images/monitor-compressed.png');
         background-position: center center;
         background-size: contain;
       }
@@ -1042,7 +1034,7 @@
   }
 
   &__img--screens:before {
-    content: url("../images/screens-compressed.png");
+    content: url('../images/screens-compressed.png');
     background-repeat: no-repeat;
   }
 
@@ -1052,26 +1044,26 @@
     }
 
     &__img--screens:before {
-      content: "";
+      content: '';
       width: 63px;
       height: 58px;
-      background-image: url("../images/screens-compressed.png");
+      background-image: url('../images/screens-compressed.png');
       background-position: center center;
       background-size: contain;
     }
   }
 
   &__img--programming:before {
-    content: url("../images/programming-compressed.png");
+    content: url('../images/programming-compressed.png');
     background-repeat: no-repeat;
 
     @media screen and (max-width: 320px) {
       & {
         // before?
-        content: "";
+        content: '';
         width: 63px;
         height: 58px;
-        background-image: url("../images/programming-compressed.png");
+        background-image: url('../images/programming-compressed.png');
         background-position: center center;
         background-size: contain;
       }
@@ -1079,7 +1071,7 @@
   }
 
   &__img--development:before {
-    content: url("../images/development-compressed.png");
+    content: url('../images/development-compressed.png');
     background-repeat: no-repeat;
   }
 
@@ -1089,10 +1081,10 @@
     }
 
     &__img--development:before {
-      content: "";
+      content: '';
       width: 63px;
       height: 58px;
-      background-image: url("../images/development-compressed.png");
+      background-image: url('../images/development-compressed.png');
       background-position: center center;
       background-size: contain;
     }
@@ -1265,7 +1257,7 @@
     z-index: 1000;
 
     &::before {
-      content: url("../images/arrow-compressed.png");
+      content: url('../images/arrow-compressed.png');
     }
 
     &::after {
@@ -1283,7 +1275,7 @@
     transform: rotate(180deg);
 
     &::before {
-      content: url("../images/arrow-compressed.png");
+      content: url('../images/arrow-compressed.png');
     }
 
     &::after {
@@ -1588,7 +1580,7 @@
     width: 23px;
     height: 15px;
     background: linear-gradient(180deg, $primary-color, $secondary-color);
-    
+
     @include bg-clip-text;
   }
 
@@ -1672,7 +1664,7 @@
 
   &__socials-link {
     display: inline-block;
-    background-image: url("../images/social-spritesheet-compressed.png");
+    background-image: url('../images/social-spritesheet-compressed.png');
     background-repeat: no-repeat;
 
     &:hover {

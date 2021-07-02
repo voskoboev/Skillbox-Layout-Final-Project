@@ -13,16 +13,16 @@ toggleMobileMenu()
 closeMobileMenu()
 
 function inputMask() {
-  const telInput = document.querySelector('.modal-window__input-tel')
+  const inputTel = document.querySelector('.modal-window__input-tel')
   const im = new Inputmask('+7 (999) 999-99-99')
 
-  im.mask(telInput)
+  im.mask(inputTel)
 }
 
 function initSwiper() {
   const slider = document.querySelector('.swiper-container')
 
-  const mySwiper = new Swiper(slider, {
+  const swiper = new Swiper(slider, {
     speed: 400,
     initialSlide: 0,
     slidesPerView: 1,
@@ -30,28 +30,27 @@ function initSwiper() {
     slideClass: 'swiper-slide',
     navigation: {
       nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+      prevEl: '.swiper-button-prev'
     },
     pagination: {
       el: '.swiper-pagination',
-      type: 'bullets',
+      type: 'bullets'
     },
     breakpoints: {
       970: {
         slidesPerView: 2,
-        spaceBetween: 36,
+        spaceBetween: 36
       },
       1280: {
         slidesPerView: 3,
-        spaceBetween: 30,
+        spaceBetween: 30
       }
     }
   })
 }
 
 function moveHeaderElementsOnLoad() {
-  const
-    decorBraces = document.querySelector('.header__decor-item--curly-braces'),
+  const decorBraces = document.querySelector('.header__decor-item--curly-braces'),
     decorSmallDiv = document.querySelector('.header__decor-item--small-div'),
     decorNum = document.querySelector('.header__decor-item--num'),
     decorBigDiv = document.querySelector('.header__decor-item--big-div'),
@@ -64,7 +63,7 @@ function moveHeaderElementsOnLoad() {
       decorNum.classList.add('num--active')
       decorBigDiv.classList.add('big-div--active')
       decorTagBraces.classList.add('tag-braces--active')
-    }, 600)
+    }, 200)
   }
 
   if (window.innerWidth > 1100) {
@@ -77,8 +76,7 @@ function moveHeaderElementsOnLoad() {
 }
 
 function moveOfferElementsOnHover() {
-  const
-    offer = document.querySelector('.offer'),
+  const offer = document.querySelector('.offer'),
     offerElements = document.querySelectorAll('.offer__decor-item')
 
   const activateElements = () => {
@@ -115,7 +113,6 @@ function scrollToServices() {
     })
   })
   // }
-
 }
 
 function scrollToPortfolio() {
@@ -131,7 +128,6 @@ function scrollToPortfolio() {
     })
   })
   // }
-
 }
 
 function scrollToPrices() {
@@ -147,12 +143,10 @@ function scrollToPrices() {
     })
   })
   // }
-
 }
 
 function scrollToTop() {
-  const
-    scrollBtn = document.querySelector('.scroll-up-btn'),
+  const scrollBtn = document.querySelector('.scroll-up-btn'),
     offsetY = 600
 
   const getTop = () => window.pageYOffset || document.documentElement.scrollTop
@@ -175,8 +169,7 @@ function scrollToTop() {
 
 function manageModalWindow() {
   const showModalWindow = () => {
-    const
-      html = document.querySelector('html'),
+    const html = document.querySelector('html'),
       body = document.querySelector('body'),
       modalWindow = document.querySelector('.modal-window'),
       btn = document.querySelectorAll('.button')
@@ -195,8 +188,7 @@ function manageModalWindow() {
   showModalWindow()
 
   const closeModalWindow = () => {
-    const
-      html = document.querySelector('html'),
+    const html = document.querySelector('html'),
       body = document.querySelector('body'),
       modalWindow = document.querySelector('.modal-window'),
       inputName = document.querySelector('.modal-window__input-name'),
@@ -204,7 +196,7 @@ function manageModalWindow() {
       closeBtn = document.querySelector('.modal-window__close-btn'),
       warning = document.querySelector('.modal-window__warning')
 
-    const clearInputValues = (input) => {
+    const clearInputValues = input => {
       input.value = ''
     }
 
@@ -224,17 +216,19 @@ function manageModalWindow() {
   closeModalWindow()
 
   const submitFormAndShowSuccessMessage = () => {
-    const
-      body = document.querySelector('body'),
+    const body = document.querySelector('body'),
       modalWindow = document.querySelector('.modal-window'),
       form = document.querySelector('.modal-window__form'),
       submitBtn = document.querySelector('.modal-window__submit-btn'),
       formSuccess = document.querySelector('.modal-window__form-success')
 
     submitBtn.addEventListener('click', () => {
-      const
-        inputNameValue = document.querySelector('.modal-window__input-name').value,
-        inputTelValue = document.querySelector('.modal-window__input-tel').value,
+      const inputNameValue = document.querySelector(`
+      .modal-window__input-name
+      `).value,
+        inputTelValue = document.querySelector(`
+        .modal-window__input-tel
+        `).value,
         warning = document.querySelector('.modal-window__warning')
 
       if (!inputNameValue || !inputTelValue) {
@@ -252,22 +246,21 @@ function manageModalWindow() {
       fetch('../php/mail.php', {
         method: 'POST',
         body: formData
+      }).then(data => {
+        form.reset()
+        form.style.display = 'none'
+        formSuccess.classList.add('modal-window__form-success--active')
+
+        setTimeout(fadeOut, 1000)
+
+        function fadeOut() {
+          body.classList.remove('stop-scroll')
+          modalWindow.classList.remove('modal-window--active')
+          form.style.display = 'flex'
+          formSuccess.classList.remove('modal-window__form-success--active')
+          warning.classList.remove('modal-window__warning--active')
+        }
       })
-        .then(data => {
-          form.reset()
-          form.style.display = 'none'
-          formSuccess.classList.add('modal-window__form-success--active')
-
-          setTimeout(fadeOut, 1000)
-
-          function fadeOut() {
-            body.classList.remove('stop-scroll')
-            modalWindow.classList.remove('modal-window--active')
-            form.style.display = 'flex'
-            formSuccess.classList.remove('modal-window__form-success--active')
-            warning.classList.remove('modal-window__warning--active')
-          }
-        })
     })
   }
 
@@ -275,8 +268,7 @@ function manageModalWindow() {
 }
 
 function toggleMobileMenu() {
-  const
-    html = document.querySelector('html'),
+  const html = document.querySelector('html'),
     body = document.querySelector('body'),
     nav = document.querySelector('.header__nav'),
     mobileMenuBtn = document.querySelector('.header__burger-menu-btn'),
@@ -292,8 +284,7 @@ function toggleMobileMenu() {
 }
 
 function closeMobileMenu() {
-  const
-    html = document.querySelector('html'),
+  const html = document.querySelector('html'),
     body = document.querySelector('body'),
     nav = document.querySelector('.header__nav'),
     menuItem = document.querySelectorAll('.menu-item'),

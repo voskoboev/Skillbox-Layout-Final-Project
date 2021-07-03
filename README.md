@@ -1,7 +1,8 @@
 ## Freelance Developer Intro Landing Page
 ### Summary:
 - Valid, crossbrowser, responsive, optimized, pixel perfect;
-- Gulp, Reset.css, SCSS, Plain JS, Plain PHP, Swiper.js, Inputmask, ESLint, Stylelint;
+- Gulp, Reset.css, SCSS, Plain JS, Plain PHP, Swiper.js, Inputmask, ESLint, Stylelint.
+[Hosted Site](https://dalekseev.netlify.app/)
  ### Business Purpose: 
 Presentation of freelance developer services for potential clients.
 ### Stack Reasons: 
@@ -49,3 +50,6 @@ Presentation of freelance developer services for potential clients.
 <span id="f5"> 5.</span> [Prog languages usage stats](https://habr.com/ru/post/543346/) </br>
 <span id="f6"> 6.</span> [State of CSS utilities stats](https://2020.stateofcss.com/ru-RU/other-tools/) </br>
 <span id="f7"> 7.</span> [State of JS utilities stats](https://2020.stateofjs.com/ru-RU/other-tools/) </br>
+
+### Sources:
+[Template in PNG.](https://disk.yandex.ru/i/7zUAVelBLli08A)

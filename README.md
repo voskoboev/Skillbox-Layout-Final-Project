@@ -7,28 +7,28 @@ Presentation of freelance developer services for potential clients.
 ### Stack Reasons: 
 #### 1) Gulp: </br>
    1. Simple setup;
-   2. Widespread use (potential support)[^1];[^1]
-   3. A large number of packages [^2].
+   2. Widespread use (potential support)<sup>[1](#f1) </sup>;
+   3. A large number of packages <sup>[2](#f2) </sup>.
 #### 2) Reset.css: </br>
    1. Lack of important text content;
    2. Many elems with unique styles. 
 #### 3) SCSS:</br>
-   1. Widespread use (potential support)[^3];
+   1. Widespread use (potential support)<sup>[3](#f3) </sup>;
    2. Useful language structures;
    3. Convenient documentation.
 #### 4) Plain JS:</br>
-   1.	Fast performance[^4];
+   1.	Fast performance<sup>[4](#f4) </sup>;
    2.	Web page comprises common features;
    3.	Easy potential support;
 #### 5) Plain PHP:</br>
 1.	The most swift way to add common mail submission fn;
-2.	Compatibility with server's standard stacks[^5].
+2.	Compatibility with server's standard stacks<sup>[5](#f5) </sup>.
 #### 6) Swiper, Inputmask:</br>
 1.	Consistancy with plain JS;
 2.	Do not require additional libs to run;
 3.	Coherent and useful documentation.
 #### 7) ESLint, Stylelint:</br>
-1. Widespread use (potential support)[^6][^7];
+1. Widespread use (potential support)<sup>[6](#f7) </sup><sup>[7](#f7) </sup>;
 2. Complete standard cfgs.
 ### Tech Features:
 - **Project Itself**: 
@@ -42,10 +42,10 @@ Presentation of freelance developer services for potential clients.
 - **ESLint, Stylelint:** Used standard cfgs with several individual settings;
 
 ### References:
-[^1]: [State of JS bundlers' stats](https://2020.stateofjs.com/ru-RU/technologies/build-tools/)
-[^2]: [Npm gulp packages number](https://www.npmjs.com/search?q=gulp)
-[^3]: [State of CSS preprocessors' stats](https://2020.stateofcss.com/ru-RU/technologies/pre-post-processors/)
-[^4]: [Plain JS comparison with libs](https://habr.com/ru/company/mailru/blog/188254/)
-[^5]: [Prog languages usage stats](https://habr.com/ru/post/543346/)
-[^6]: [State of CSS utilities stats](https://2020.stateofcss.com/ru-RU/other-tools/)
-[^7]: [State of JS utilities stats](https://2020.stateofjs.com/ru-RU/other-tools/)
+<span id="f1"> 1.</span> [State of JS bundlers' stats](https://2020.stateofjs.com/ru-RU/technologies/build-tools/)
+<span id="f2"> 2.</span> [Npm gulp packages number](https://www.npmjs.com/search?q=gulp)
+<span id="f3"> 3.</span> [State of CSS preprocessors' stats](https://2020.stateofcss.com/ru-RU/technologies/pre-post-processors/)
+<span id="f4"> 4.</span> [Plain JS comparison with libs](https://habr.com/ru/company/mailru/blog/188254/)
+<span id="f5"> 5.</span> [Prog languages usage stats](https://habr.com/ru/post/543346/)
+<span id="f6"> 6.</span> [State of CSS utilities stats](https://2020.stateofcss.com/ru-RU/other-tools/)
+<span id="f7"> 7.</span> [State of JS utilities stats](https://2020.stateofjs.com/ru-RU/other-tools/)

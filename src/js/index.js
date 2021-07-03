@@ -185,9 +185,7 @@ function manageModalWindow() {
       input.value = ''
     }
 
-    closeBtn.addEventListener('click', ev => {
-      ev.preventDefault()
-
+    const handleCloseModalWindow = () => {
       html.style.overflowX = 'hidden'
       body.classList.remove('stop-scroll')
       modalWindow.classList.remove('modal-window--active')
@@ -195,6 +193,20 @@ function manageModalWindow() {
 
       clearInputValues(inputName)
       clearInputValues(inputTel)
+    }
+
+
+    modalWindow.addEventListener('click', function (ev) {
+      ev.preventDefault()
+
+      if (this === ev.target) {
+        handleCloseModalWindow()
+      }
+    })
+
+    closeBtn.addEventListener('click', ev => {
+      ev.preventDefault()
+      handleCloseModalWindow()
     })
   }
 

@@ -7,7 +7,7 @@ Presentation of freelance developer services for potential clients.
 ### Stack Reasons: 
 #### 1) Gulp: </br>
    1. Simple setup;
-   2. Widespread use (potential support)[^1];
+   2. Widespread use (potential support)[^1];[^1]
    3. A large number of packages [^2].
 #### 2) Reset.css: </br>
    1. Lack of important text content;

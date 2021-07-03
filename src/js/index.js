@@ -1,12 +1,20 @@
 'use strict'
 
+/* 
+All nested fns declared by fn expression method
+to make code more secure. These fns called directly after
+their declaration.
+
+Outer fns declared by fn declaration method to call
+them at the beginning of the script. It provides better 
+debugging.
+*/
+
 inputMask()
 initSwiper()
 moveHeaderElementsOnLoad()
 moveOfferElementsOnHover()
-scrollToServices()
-scrollToPortfolio()
-scrollToPrices()
+scrollToSection()
 scrollToTop()
 manageModalWindow()
 toggleMobileMenu()
@@ -66,13 +74,9 @@ function moveHeaderElementsOnLoad() {
     }, 200)
   }
 
-  if (window.innerWidth > 1100) {
-    window.addEventListener('load', activateElements)
-  }
-
-  if (window.innerWidth <= 1100) {
-    window.removeEventListener('load', activateElements)
-  }
+  window.innerWidth > 1100
+    ? window.addEventListener('load', activateElements)
+    : window.removeEventListener('load', activateElements)
 }
 
 function moveOfferElementsOnHover() {
@@ -91,58 +95,39 @@ function moveOfferElementsOnHover() {
     })
   }
 
-  offer.addEventListener('mouseenter', activateElements)
-  offer.addEventListener('mouseleave', inactivateElements)
-
   if (window.innerWidth < 1200) {
     offer.removeEventListener('mouseenter', activateElements)
     offer.removeEventListener('mouseleave', inactivateElements)
   }
+
+  offer.addEventListener('mouseenter', activateElements)
+  offer.addEventListener('mouseleave', inactivateElements)
 }
 
-function scrollToServices() {
-  const servicesMenuItems = document.querySelectorAll('.menu-item--services')
+function scrollToSection() {
+  const menuItemsServices = document.querySelectorAll('.menu-item--services'),
+    menuItemsPortfolio = document.querySelectorAll('.menu-item--portfolio'),
+    menuItemsPrices = document.querySelectorAll('.menu-item--prices'),
+    sectionServices = document.querySelector('.services'),
+    sectionPortfolio = document.querySelector('.portfolio'),
+    sectionPrices = document.querySelector('.offer')
 
-  // if (window.innerWidth > 1024) {
-  servicesMenuItems.forEach(el => {
-    el.addEventListener('click', () => {
-      window.scrollTo({
-        top: 790,
-        behavior: 'smooth'
+  const handleScrollToSection = (menuItems, section) => {
+    const position = section.getBoundingClientRect().top + window.pageYOffset
+
+    menuItems.forEach(el => {
+      el.addEventListener('click', () => {
+        window.scrollTo({
+          top: position,
+          behavior: 'smooth'
+        })
       })
     })
-  })
-  // }
-}
+  }
 
-function scrollToPortfolio() {
-  const portfolioMenuItem = document.querySelectorAll('.menu-item--portfolio')
-
-  // if (window.innerWidth > 1024) {
-  portfolioMenuItem.forEach(el => {
-    el.addEventListener('click', () => {
-      window.scrollTo({
-        top: 1420,
-        behavior: 'smooth'
-      })
-    })
-  })
-  // }
-}
-
-function scrollToPrices() {
-  const servicesMenuItem = document.querySelectorAll('.menu-item--prices')
-
-  // if (window.innerWidth >= 425) {
-  servicesMenuItem.forEach(el => {
-    el.addEventListener('click', () => {
-      window.scrollTo({
-        top: 2600,
-        behavior: 'smooth'
-      })
-    })
-  })
-  // }
+  handleScrollToSection(menuItemsServices, sectionServices)
+  handleScrollToSection(menuItemsPortfolio, sectionPortfolio)
+  handleScrollToSection(menuItemsPrices, sectionPrices)
 }
 
 function scrollToTop() {

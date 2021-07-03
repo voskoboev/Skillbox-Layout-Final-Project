@@ -1,19 +1,19 @@
 .button-primary {
   @include flex(center, center, row);
-  
+
   width: 271px;
   min-height: 61px;
   padding: 20px;
-  border: none;
   font-family: inherit;
   font-size: 18px;
   color: #fff;
   background-color: #ff4e2e;
+  border: none;
 
   &:hover {
-    outline: 1px solid #ff4e2e;
     color: #ff4e2e;
     background-color: #fff;
+    outline: 1px solid #ff4e2e;
     transition: 0.1s;
   }
 

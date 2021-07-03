@@ -1,12 +1,12 @@
 .modal-window {
   position: fixed;
+  z-index: 20000;
   display: none;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   width: 100%;
   height: 100%;
   background-color: rgba(137, 147, 173, 0.5);
-  z-index: 20000;
 
   &--active {
     display: flex;
@@ -15,15 +15,16 @@
   &__form {
     position: relative;
     @include flex(space-around, normal, column);
+
+    z-index: 5000;
     width: 370px;
     min-height: 370px;
     padding: 30px;
+    line-height: 30px;
+    text-align: center;
+    background-color: #fff;
     border: 2px solid #ff4e2e;
     border-radius: 2%;
-    text-align: center;
-    line-height: 30px;
-    background-color: #fff;
-    z-index: 5000;
 
     @media screen and (max-width: 450px) {
       width: auto;
@@ -36,17 +37,18 @@
   }
 
   &__close-btn {
+    @include flex(center, center, row);
+
     position: absolute;
     top: 5px;
     right: 5px;
-    @include flex(center, center, row);
     width: 35px;
     height: 35px;
     padding: 9px;
+    background-color: #fff;
     border: 1px solid #8993ad;
     border-radius: 50%;
     outline: none;
-    background-color: #fff;
     opacity: 0.5;
 
     &:hover {
@@ -55,33 +57,33 @@
   }
 
   &__text {
-    text-align: center;
     margin-bottom: 10px;
+    text-align: center;
   }
 
   &__input {
     display: block;
-    margin: 0 auto;
     width: 271px;
     height: 40px;
     padding: 5px;
-    border: none;
-    outline: none;
+    margin: 0 auto;
     font-family: inherit;
     background-color: #ebebeb;
+    border: none;
+    outline: none;
   }
 
   &__submit-btn {
     height: 40px;
-    border: none;
     margin: 0 auto;
     font-family: inherit;
+    border: none;
   }
 
   &__warning {
     line-height: 16px;
+    color: #f00;
     opacity: 0;
-    color: #ff0000;
   }
 
   &__warning--active {
@@ -90,15 +92,15 @@
 
   &__form-success {
     position: relative;
+    z-index: 6000;
     display: none;
     width: 370px;
     min-height: 200px;
     padding: 60px;
     margin: 200px auto;
+    background-color: #fff;
     border: 2px solid $secondary-color;
     border-radius: 2%;
-    background-color: #fff;
-    z-index: 6000;
 
     @media screen and (max-width: 450px) {
       width: auto;
@@ -111,9 +113,9 @@
   }
 
   &__form-success-text {
-    text-align: center;
     font-size: 30px;
     font-weight: 500;
     color: #8993ad;
+    text-align: center;
   }
 }

@@ -1,19 +1,19 @@
 @mixin flex($jcc: start, $ai: normal, $fld: row) {
   display: flex;
-  justify-content: $jcc;
-  align-items: $ai;
   flex-direction: $fld;
+  align-items: $ai;
+  justify-content: $jcc;
 }
 
 @mixin pl-pr($val) {
   padding: {
-    left: $val;
     right: $val;
+    left: $val;
   }
 }
 
 @mixin bg-clip-text {
   background-clip: text;
-  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
 }

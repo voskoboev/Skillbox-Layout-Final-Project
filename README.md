@@ -2,7 +2,7 @@
 ### Summary:
 - Valid, crossbrowser, responsive, optimized, pixel perfect;
 - Gulp, Reset.css, SCSS, Plain JS, Plain PHP, Swiper.js, Inputmask, ESLint, Stylelint.
-- [Hosted Site](https://dalekseev.netlify.app/)
+- [Hosted Site](https://dalekseev.netlify.app/).
  ### Business Purpose: 
 Presentation of freelance developer services for potential clients.
 ### Stack Reasons: 
@@ -19,7 +19,7 @@ Presentation of freelance developer services for potential clients.
    3. Convenient documentation.
 #### 4) Plain JS:</br>
    1.	Fast performance<sup>[4](#f4) </sup>;
-   2.	Project comprises common JS features;
+   2.	Project comprises common JS features.
    3.	Easy potential support;
 #### 5) Plain PHP:</br>
 1.	The most swift way to add mail submission fn;

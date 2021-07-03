@@ -42,10 +42,10 @@ Presentation of freelance developer services for potential clients.
 - **ESLint, Stylelint:** Used standard cfgs with several individual settings;
 
 ### References:
-<span id="f1"> 1.</span> [State of JS bundlers' stats](https://2020.stateofjs.com/ru-RU/technologies/build-tools/)
-<span id="f2"> 2.</span> [Npm gulp packages number](https://www.npmjs.com/search?q=gulp)
-<span id="f3"> 3.</span> [State of CSS preprocessors' stats](https://2020.stateofcss.com/ru-RU/technologies/pre-post-processors/)
-<span id="f4"> 4.</span> [Plain JS comparison with libs](https://habr.com/ru/company/mailru/blog/188254/)
-<span id="f5"> 5.</span> [Prog languages usage stats](https://habr.com/ru/post/543346/)
-<span id="f6"> 6.</span> [State of CSS utilities stats](https://2020.stateofcss.com/ru-RU/other-tools/)
-<span id="f7"> 7.</span> [State of JS utilities stats](https://2020.stateofjs.com/ru-RU/other-tools/)
+<span id="f1"> 1.</span> [State of JS bundlers' stats](https://2020.stateofjs.com/ru-RU/technologies/build-tools/)</br>
+<span id="f2"> 2.</span> [Npm gulp packages number](https://www.npmjs.com/search?q=gulp)</br>
+<span id="f3"> 3.</span> [State of CSS preprocessors' stats](https://2020.stateofcss.com/ru-RU/technologies/pre-post-processors/)</br>
+<span id="f4"> 4.</span> [Plain JS comparison with libs](https://habr.com/ru/company/mailru/blog/188254/)</br>
+<span id="f5"> 5.</span> [Prog languages usage stats](https://habr.com/ru/post/543346/)</br>
+<span id="f6"> 6.</span> [State of CSS utilities stats](https://2020.stateofcss.com/ru-RU/other-tools/)</br>
+<span id="f7"> 7.</span> [State of JS utilities stats](https://2020.stateofjs.com/ru-RU/other-tools/)</br>

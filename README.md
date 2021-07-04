@@ -41,7 +41,18 @@ Presentation of freelance developer services for potential clients.
 	-	UI blocks and auxiliary SCSS modules are splitted into two folders.
 - **Gulp**: Configured individual project settings.
 - **ESLint, Stylelint:** Used standard cfgs with several individual settings.
-
+### Optimizations:
+-   **HTML**: HTML entities changed with CSS pseudo-elems where possible.
+-   **CSS**:
+	- Minified;
+	- Styles isolated with BEM classes and SCSS modules;
+	- Excluded excessive props inheritance where possible;
+	- Excluded pseudo-classes where possible.
+- **JS**:
+	- Minified;
+	- DRY, KISS, YAGNI.
+- **Pics**: Compressed.
+- **Fonts**: Preloaded.
 ### References:
 <span id="f1"> 1.</span> [State of JS bundlers' stats](https://2020.stateofjs.com/ru-RU/technologies/build-tools/) </br>
 <span id="f2"> 2.</span> [Npm gulp packages number](https://www.npmjs.com/search?q=gulp) </br>
@@ -50,6 +61,5 @@ Presentation of freelance developer services for potential clients.
 <span id="f5"> 5.</span> [Prog languages usage stats](https://habr.com/ru/post/543346/) </br>
 <span id="f6"> 6.</span> [State of CSS utilities stats](https://2020.stateofcss.com/ru-RU/other-tools/) </br>
 <span id="f7"> 7.</span> [State of JS utilities stats](https://2020.stateofjs.com/ru-RU/other-tools/) </br>
-
 ### Sources:
 [Template in PNG](https://disk.yandex.ru/i/7zUAVelBLli08A)

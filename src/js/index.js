@@ -176,25 +176,17 @@ function manageModalWindow() {
     const html = document.querySelector('html'),
       body = document.querySelector('body'),
       modalWindow = document.querySelector('.modal-window'),
-      inputName = document.querySelector('.modal-window__input-name'),
-      inputTel = document.querySelector('.modal-window__input-tel'),
+      form = document.querySelector('.modal-window__form'),
       closeBtn = document.querySelector('.modal-window__close-btn'),
       warning = document.querySelector('.modal-window__warning')
-
-    const clearInputValues = input => {
-      input.value = ''
-    }
 
     const handleCloseModalWindow = () => {
       html.style.overflowX = 'hidden'
       body.classList.remove('stop-scroll')
       modalWindow.classList.remove('modal-window--active')
       warning.classList.remove('modal-window__warning--active')
-
-      clearInputValues(inputName)
-      clearInputValues(inputTel)
+      form.reset()
     }
-
 
     modalWindow.addEventListener('click', function (ev) {
       ev.preventDefault()

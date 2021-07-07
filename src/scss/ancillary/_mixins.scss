@@ -12,6 +12,12 @@
   }
 }
 
+@mixin initial-elem-state($rot) {
+  opacity: 1;
+  transform: translate(0, 0);
+  transform: rotate($rot);
+}
+
 @mixin bg-clip-text {
   background-clip: text;
   -webkit-text-fill-color: transparent;

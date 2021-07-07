@@ -34,7 +34,8 @@ Presentation of freelance developer services for potential clients.
 ### Tech Features:
 - **Project in General**: 
 	- Folder structure is mostly file based besides SCSS.
-	- SCSS has BEM based flat file structure.
+	- SCSS has BEM based flat file structure;
+   - Cross-browser compatibility was checked with ‘Chrome’, ‘Opera’, ‘Firefox’, ‘Edge’ and ‘Yandex’.
 - **HTML:** Semantic layout.
 - **SCSS**:
 	-	BEM naming methodology;
@@ -46,8 +47,7 @@ Presentation of freelance developer services for potential clients.
 -   **CSS**:
 	- Minified;
 	- Styles isolated with BEM classes and SCSS modules;
-	- Excluded excessive props inheritance where possible;
-	- Excluded pseudo-classes where possible.
+	- Excluded excessive props inheritance where possible.
 - **JS**:
 	- Minified;
 	- DRY, KISS, YAGNI.

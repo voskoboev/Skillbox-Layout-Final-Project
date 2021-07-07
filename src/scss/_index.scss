@@ -73,9 +73,7 @@
 
   @keyframes fly-curly-braces {
     0% {
-      opacity: 1;
-      transform: translate(0, 0);
-      transform: rotate(30deg);
+      @include initial-elem-state(30deg);
     }
 
     50% {
@@ -84,9 +82,7 @@
     }
 
     100% {
-      opacity: 1;
-      transform: translate(0, 0);
-      transform: rotate(30deg);
+      @include initial-elem-state(30deg);
     }
   }
 
@@ -136,9 +132,7 @@
 
   @keyframes fly-small-div {
     0% {
-      opacity: 1;
-      transform: translate(0, 0);
-      transform: rotate(345deg);
+      @include initial-elem-state(345deg);
     }
 
     50% {
@@ -147,9 +141,7 @@
     }
 
     100% {
-      opacity: 1;
-      transform: translate(0, 0);
-      transform: rotate(345deg);
+      @include initial-elem-state(345deg);
     }
   }
 
@@ -187,9 +179,7 @@
 
   @keyframes fly-num {
     0% {
-      opacity: 1;
-      transform: translate(0, 0);
-      transform: rotate(15deg);
+      @include initial-elem-state(15deg);
     }
 
     50% {
@@ -198,9 +188,7 @@
     }
 
     100% {
-      opacity: 1;
-      transform: translate(0, 0);
-      transform: rotate(15deg);
+      @include initial-elem-state(15deg);
     }
   }
 
@@ -227,8 +215,7 @@
   @keyframes fly-big-div {
     0% {
       opacity: 1;
-      transform: translate(0, 0);
-      transform: rotate(20deg);
+      @include initial-elem-state(20deg);
     }
 
     50% {
@@ -237,9 +224,7 @@
     }
 
     100% {
-      opacity: 1;
-      transform: translate(0, 0);
-      transform: rotate(20deg);
+      @include initial-elem-state(20deg);
     }
   }
 
@@ -275,9 +260,7 @@
 
   @keyframes fly-tag-braces {
     0% {
-      opacity: 1;
-      transform: translate(0, 0);
-      transform: rotate(340deg);
+      @include initial-elem-state(340deg);
     }
 
     50% {
@@ -286,9 +269,7 @@
     }
 
     100% {
-      opacity: 1;
-      transform: translate(0, 0);
-      transform: rotate(340deg);
+      @include initial-elem-state(340deg);
     }
   }
 
